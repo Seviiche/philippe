@@ -1,0 +1,270 @@
+/* =========================================================
+   Philippe Thorent — Apiculteur & producteur local (66)
+   Identité : cire / miel / verger — parente d'avocatduroussillon
+   Display : Fraunces  ·  Texte : Work Sans
+   ========================================================= */
+
+:root{
+  --wax:#F5ECD9;        /* fond — crème de cire        */
+  --wax-deep:#EFE3C4;   /* fond bande démarche         */
+  --comb:#FFFDF7;       /* surfaces / cartes           */
+  --bark:#2E2118;       /* texte principal             */
+  --bark-soft:#5C4733;  /* texte secondaire            */
+  --honey:#C4881E;      /* accent principal — miel     */
+  --honey-deep:#8A5713; /* accent foncé — propolis     */
+  --olive:#6E7A4B;      /* accent nature — olive       */
+  --line:#E7D8B6;       /* filets / bordures           */
+  --maxw:1160px;
+  --shadow:0 20px 45px -26px rgba(46,33,24,.55);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--wax);color:var(--bark);
+  font-family:"Work Sans",system-ui,-apple-system,sans-serif;
+  font-size:clamp(1rem,.97rem + .16vw,1.08rem);line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-optical-sizing:auto;font-weight:600;line-height:1.06;color:var(--bark);margin:0}
+a{color:var(--honey-deep);text-decoration:none;transition:color .15s ease}
+a:hover{color:var(--honey)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.4rem)}
+.eyebrow{font-weight:600;text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;color:var(--honey-deep)}
+:focus-visible{outline:3px solid var(--honey);outline-offset:2px;border-radius:4px}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(245,236,217,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:70px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{width:44px;height:44px;object-fit:contain}
+.brand .bname{font-family:"Fraunces",serif;font-weight:600;font-size:1.14rem;line-height:1.05}
+.brand .btag{font-size:.72rem;letter-spacing:.02em;color:var(--bark-soft);line-height:1}
+#primary-nav ul{display:flex;gap:1.7rem;list-style:none;margin:0;padding:0}
+#primary-nav a{font-size:.94rem;font-weight:500;color:var(--bark)}
+#primary-nav a:hover{color:var(--honey-deep)}
+.nav-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;padding:.5rem .6rem;cursor:pointer;color:var(--bark)}
+.nav-toggle svg{display:block}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.98rem;padding:.85rem 1.45rem;border-radius:999px;border:1.6px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .22s ease,background .2s ease,color .2s ease}
+.btn-primary{background:var(--honey);color:#fff}
+.btn-primary:hover{background:var(--honey-deep);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-ghost{border-color:var(--honey-deep);color:var(--honey-deep)}
+.btn-ghost:hover{background:rgba(196,136,30,.10);transform:translateY(-2px)}
+.btn-sm{padding:.6rem 1rem;font-size:.9rem}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,4vw,3.6rem);align-items:center;padding-block:clamp(2.6rem,6vw,5rem)}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.4rem);letter-spacing:-.012em;margin-top:.9rem}
+.hero .lede{font-size:clamp(1.06rem,1rem + .4vw,1.3rem);color:var(--bark-soft);margin-top:1.1rem;max-width:36ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}
+.next-sale{display:inline-flex;align-items:center;gap:.75rem;background:var(--comb);border:1px solid var(--line);border-radius:14px;padding:.75rem 1.05rem;margin-top:1.5rem;box-shadow:var(--shadow)}
+.next-sale .dot{width:.62rem;height:.62rem;border-radius:50%;background:var(--olive);box-shadow:0 0 0 4px rgba(110,122,75,.2);flex:0 0 auto}
+.next-sale .ns-txt{font-size:.95rem;line-height:1.25}
+.next-sale .ns-lbl{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;color:var(--honey-deep);font-weight:600}
+.next-sale b{font-weight:600}
+
+.hero-media{position:relative;justify-self:center;width:min(440px,100%)}
+.hex-frame{position:relative;aspect-ratio:1/1}
+.hex-frame::before{content:"";position:absolute;inset:-12px;background:var(--honey);clip-path:polygon(25% 2%,75% 2%,100% 50%,75% 98%,25% 98%,0 50%);opacity:.9}
+.hex-frame img{position:relative;width:100%;height:100%;object-fit:cover;clip-path:polygon(25% 2%,75% 2%,100% 50%,75% 98%,25% 98%,0 50%)}
+.hero-media .badge{position:absolute;right:-6px;bottom:8%;background:var(--comb);border:1px solid var(--line);border-radius:14px;padding:.55rem .8rem;box-shadow:var(--shadow);font-size:.82rem;font-weight:600;color:var(--honey-deep);display:flex;align-items:center;gap:.4rem}
+
+/* ---------- Sections ---------- */
+.section{padding-block:clamp(3rem,7vw,6rem)}
+.section-alt{background:var(--comb)}
+.section-head{max-width:62ch;margin-bottom:clamp(1.7rem,3vw,2.7rem)}
+.section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-top:.55rem}
+.section-head p{color:var(--bark-soft);margin:.9rem 0 0}
+
+/* ---------- Le producteur ---------- */
+.producer{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.producer .pimg{border-radius:20px;box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+.producer h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-top:.55rem}
+.producer p{color:var(--bark-soft);margin:1rem 0 0}
+.arrow-link{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;margin-top:1.3rem}
+
+/* ---------- Produits ---------- */
+.prods{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:1.3rem}
+.card{background:var(--comb);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ph{aspect-ratio:4/3;object-fit:cover;width:100%;background:var(--wax-deep)}
+.card .body{padding:1.25rem 1.3rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.4rem}
+.card p{color:var(--bark-soft);margin:.55rem 0 0;font-size:.99rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.chip{font-size:.78rem;font-weight:500;color:var(--bark-soft);background:var(--wax);border:1px solid var(--line);padding:.28rem .6rem;border-radius:999px}
+.tag-new{align-self:flex-start;display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--olive);padding:.3rem .65rem;border-radius:999px;margin-top:.95rem}
+.card .note{font-size:.86rem;color:var(--bark-soft);margin-top:.55rem}
+
+/* ---------- Démarche ---------- */
+.demarche{position:relative;background:linear-gradient(180deg,var(--wax-deep),var(--wax));overflow:hidden}
+.demarche .bighex{position:absolute;right:-90px;top:-70px;width:340px;height:380px;background:none;border:2px solid rgba(196,136,30,.16);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);pointer-events:none}
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:1.5rem 1.9rem;position:relative}
+.value{display:flex;flex-direction:column;gap:.5rem}
+.value .hic{width:38px;height:42px;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;color:#fff;margin-bottom:.2rem}
+.value .hic svg{width:19px;height:19px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.value h3{font-size:1.22rem}
+.value p{color:var(--bark-soft);margin:0;font-size:.96rem}
+
+/* ---------- Points de vente ---------- */
+.pv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:start}
+.addr{font-size:1.05rem;line-height:1.5;margin:.2rem 0 0}
+.addr .tel{display:inline-block;margin-top:.7rem;font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600;color:var(--bark)}
+.route-btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
+.map-embed{margin-top:0}
+.map-embed iframe{width:100%;height:330px;border:1px solid var(--line);border-radius:16px}
+.hours{width:100%;border-collapse:collapse;background:var(--comb);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:1.1rem}
+.hours caption{caption-side:top;text-align:left;font-weight:600;color:var(--honey-deep);font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:.5rem}
+.hours th,.hours td{text-align:left;padding:.72rem 1rem;border-bottom:1px solid var(--line);font-size:.96rem}
+.hours th{font-weight:600;width:9rem}
+.hours tr:last-child td,.hours tr:last-child th{border-bottom:0}
+.hours .closed{color:#a3866a}
+
+/* ---------- Prévenez-moi (bande foncée) ---------- */
+.prevenez{background:var(--bark);color:#F3E9D4}
+.prevenez .eyebrow{color:#E7B457}
+.prevenez h2{color:#FBF3E0;font-size:clamp(1.9rem,3.4vw,2.7rem);margin-top:.55rem}
+.prevenez p{color:#D8C6A8;margin:.9rem 0 0;max-width:48ch}
+.nl-form{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem;max-width:560px}
+.nl-form .field{flex:1 1 180px;background:rgba(255,255,255,.07);border:1px solid rgba(243,233,212,.28);color:#fff;border-radius:11px;padding:.85rem 1rem;font:inherit}
+.nl-form .field::placeholder{color:#b7a789}
+.nl-form .field:focus{outline:none;border-color:var(--honey);background:rgba(255,255,255,.12)}
+.nl-form button{flex:0 0 auto}
+.nl-alt{margin-top:1rem;font-size:.92rem;color:#c9b795}
+.nl-alt a{color:#E7B457}
+
+/* ---------- Footer ---------- */
+.footer{background:#241a12;color:#c9b79b;padding-block:2.6rem;font-size:.92rem}
+.footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1.6rem}
+.footer h4{font-family:"Fraunces",serif;color:#F3E9D4;font-size:1.05rem;margin:0 0 .6rem}
+.footer a{color:#d8c6a8}
+.footer a:hover{color:#E7B457}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.footer .brandline{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.footer .brandline img{width:38px;height:38px;object-fit:contain}
+.footer .platform{margin-top:.4rem;color:#a89478}
+.footer .copy{border-top:1px solid rgba(243,233,212,.14);margin-top:1.8rem;padding-top:1.2rem;color:#a89478;display:flex;flex-wrap:wrap;gap:.4rem;justify-content:space-between}
+
+/* ---------- Révélation au scroll ---------- */
+[data-reveal]{opacity:0;transform:translateY(15px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .hero .wrap,.producer,.pv{grid-template-columns:1fr}
+  .hero-media{grid-row:1;margin-bottom:.5rem;width:min(360px,80%)}
+  .producer .pimg{grid-row:1}
+  .footer .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .nav-toggle{display:inline-flex}
+  #primary-nav{position:absolute;left:0;right:0;top:70px;background:var(--wax);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease}
+  #primary-nav.open{max-height:60vh}
+  #primary-nav ul{flex-direction:column;gap:0;padding:.4rem 0}
+  #primary-nav li{padding:0}
+  #primary-nav a{display:block;padding:.85rem clamp(1.1rem,4vw,2.4rem)}
+  .footer .fgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  [data-reveal]{opacity:1;transform:none}
+}
+
+/* =========================================================
+   PAGES INTERNES (producteur, produits, où nous trouver)
+   ========================================================= */
+
+/* Nav : lien actif + bouton CTA */
+#primary-nav a.active{color:var(--honey-deep);position:relative}
+#primary-nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--honey);border-radius:2px}
+.nav-cta{color:#fff!important}
+
+/* Bandeau titre de page */
+.page-hero{position:relative;background:linear-gradient(180deg,var(--wax-deep),var(--wax));overflow:hidden;border-bottom:1px solid var(--line)}
+.page-hero .bighex{position:absolute;right:-70px;top:-60px;width:300px;height:330px;border:2px solid rgba(196,136,30,.15);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);pointer-events:none}
+.page-hero .wrap{padding-block:clamp(2.4rem,5vw,3.8rem);position:relative}
+.page-hero h1{font-size:clamp(2.1rem,4.2vw,3.4rem);margin-top:.5rem}
+.page-hero p{color:var(--bark-soft);margin:.85rem 0 0;max-width:58ch;font-size:clamp(1.02rem,1rem + .3vw,1.18rem)}
+
+/* Split image / texte alterné */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.split + .split{margin-top:clamp(2.6rem,5vw,4.2rem)}
+.split img{width:100%;border-radius:20px;box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover}
+.split .txt h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.split .txt p{color:var(--bark-soft);margin:.9rem 0 0}
+.split.rev .img-col{order:2}
+@media (max-width:820px){.split{grid-template-columns:1fr}.split .img-col{order:0!important}.split img{grid-row:1}}
+
+/* Exergue */
+.pullquote{border-left:4px solid var(--honey);padding:.3rem 0 .3rem 1.3rem;margin:clamp(1.6rem,3vw,2.4rem) 0;font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:clamp(1.3rem,1.1rem + 1vw,1.9rem);line-height:1.3;color:var(--bark)}
+
+/* Colonne éditoriale lisible */
+.prose{max-width:68ch}
+.prose p{margin:0 0 1rem;color:var(--bark-soft)}
+.prose p.lead{font-size:1.12rem;color:var(--bark)}
+
+/* Encart mise en avant (miel d'avocat, etc.) */
+.highlight{background:linear-gradient(180deg,#FBF1D9,#F6EACD);border:1px solid var(--line);border-radius:20px;padding:clamp(1.5rem,3vw,2.4rem);position:relative;overflow:hidden}
+.highlight .hl-hex{position:absolute;right:-40px;bottom:-50px;width:190px;height:210px;border:2px solid rgba(196,136,30,.2);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.highlight h3{font-size:clamp(1.5rem,2.4vw,2rem);margin-top:.6rem}
+.highlight p{color:var(--bark-soft);margin:.7rem 0 0;max-width:62ch}
+.highlight .tag-new{margin-top:0}
+
+/* Tableau générique (saisonnalité...) */
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;background:var(--comb);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:560px}
+.tbl th,.tbl td{text-align:left;padding:.72rem 1rem;border-bottom:1px solid var(--line);font-size:.95rem}
+.tbl thead th{background:var(--wax-deep);font-weight:600;color:var(--bark);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.tbl tbody tr:last-child td{border-bottom:0}
+.tbl .peak{color:var(--honey-deep);font-weight:600}
+.tbl-note{font-size:.9rem;color:var(--bark-soft);margin-top:.7rem;font-style:italic}
+
+/* Réassurance en grille */
+.reassure{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem 1.9rem}
+.reassure .item{display:flex;gap:.85rem;align-items:flex-start}
+.reassure .hic{flex:0 0 auto;margin:0}
+.reassure h3{font-size:1.12rem}
+.reassure p{margin:.25rem 0 0;color:var(--bark-soft);font-size:.95rem}
+
+/* FAQ (accordéon natif) */
+.faq{max-width:780px}
+.faq details{background:var(--comb);border:1px solid var(--line);border-radius:12px;padding:0 1.1rem;margin-bottom:.7rem}
+.faq summary{cursor:pointer;font-weight:600;padding:1rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.35rem;color:var(--honey-deep);line-height:1}
+.faq details[open] summary::after{content:"\2013"}
+.faq details > p{margin:0 0 1rem;color:var(--bark-soft)}
+
+/* Bandeau CTA (avant footer) */
+.cta-band{background:linear-gradient(180deg,var(--wax-deep),#F0E4C6);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cta-band .cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.4rem;padding-block:clamp(2.2rem,4vw,3.2rem)}
+.cta-band h2{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.cta-band p{color:var(--bark-soft);margin:.5rem 0 0;max-width:48ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:.7rem}
+
+/* Fiche produit (blocs alternés) */
+.prod-block{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,4vw,3rem);align-items:center}
+.prod-block + .prod-block{margin-top:clamp(2.4rem,5vw,4rem)}
+.prod-block .pimg{width:100%;border-radius:20px;box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover}
+.prod-block.rev .img-col{order:2}
+.prod-block h3{font-size:clamp(1.5rem,2.4vw,2rem)}
+.prod-block p{color:var(--bark-soft);margin:.7rem 0 0}
+@media (max-width:820px){.prod-block{grid-template-columns:1fr}.prod-block .img-col{order:0!important}.prod-block .pimg{grid-row:1}}
+
+/* Carte info pratique */
+.infogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
+.infocard{background:var(--comb);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem}
+.infocard h3{font-size:1.12rem;margin-bottom:.25rem}
+.infocard p{margin:.15rem 0 0;color:var(--bark-soft);font-size:.95rem}
+
+/* Page mentions légales */
+.legal{max-width:760px}
+.legal h2{font-size:1.4rem;margin:2rem 0 .6rem}
+.legal p{color:var(--bark-soft);margin:.3rem 0}
+.legal .todo{background:#FBF1D9;border:1px dashed var(--honey);border-radius:8px;padding:.15rem .5rem;color:var(--honey-deep);font-weight:600;font-size:.92rem}
