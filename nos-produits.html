@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nos produits — Miels, jus de pomme, huile d'olive (66)</title>
-<meta name="description" content="Les produits de Philippe Thorent : miels artisanaux (romarin, lavande, châtaignier, miel d'avocat), jus de pomme pur, huile d'olive, confitures, amandes. Calendrier des récoltes et vente directe à Boulternère.">
+<title>Nos miels & produits — Miels du Roussillon (66)</title>
+<meta name="description" content="Tous les miels de Miels Thorent : romarin, lavande papillon, garrigue, châtaignier, callune, toutes fleurs, fleurs sauvages, miel d'avocat. Carte des zones de butinage dans les Pyrénées-Orientales et vente directe à Bouleternère.">
 <link rel="icon" href="images/logo.png" type="image/png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nos produits — Miels, jus de pomme, huile d'olive (66)">
-<meta property="og:description" content="Les produits de Philippe Thorent : miels artisanaux (romarin, lavande, châtaignier, miel d'avocat), jus de pomme pur, huile d'olive, confitures, amandes. Calendrier des récoltes et vente directe à Boulternère.">
+<meta property="og:title" content="Nos miels & produits — Miels du Roussillon (66)">
+<meta property="og:description" content="Tous les miels de Miels Thorent : romarin, lavande papillon, garrigue, châtaignier, callune, toutes fleurs, fleurs sauvages, miel d'avocat. Carte des zones de butinage dans les Pyrénées-Orientales et vente directe à Bouleternère.">
 <meta property="og:image" content="https://philippe-thorent.fr/images/hero.png">
 <meta property="og:locale" content="fr_FR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,175 +22,193 @@
 
 <header class="site-header">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html" aria-label="Accueil — Philippe Thorent">
-      <img src="images/logo.png" alt="Logo Philippe Thorent">
-      <span>
-        <span class="bname">Philippe Thorent</span><br>
-        <span class="btag">Apiculteur et producteur — Boulternère (66)</span>
-      </span>
+    <a class="brand" href="index.html" aria-label="Accueil — Miels Thorent">
+      <img src="images/logo.png" alt="Logo Miels Thorent">
+      <span><span class="bname">Philippe Thorent</span><br><span class="btag">Apiculteur — Bouleternère (66)</span></span>
     </a>
     <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
-    <nav id="primary-nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="le-producteur.html">Le producteur</a></li>
-        <li><a href="nos-produits.html" class="active">Nos produits</a></li>
-        <li><a href="ou-nous-trouver.html">Où nous trouver</a></li>
-        <li><a class="btn btn-primary btn-sm nav-cta" href="ou-nous-trouver.html#prevenez">Prévenez-moi</a></li>
-      </ul>
-    </nav>
+    <nav id="primary-nav" aria-label="Navigation principale"><ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="le-producteur.html">Le producteur</a></li>
+      <li><a href="nos-produits.html" class="active">Nos miels &amp; produits</a></li>
+      <li><a href="le-carnet.html">Le carnet</a></li>
+      <li><a href="ou-nous-trouver.html">Où nous trouver</a></li>
+      <li><a class="btn btn-primary btn-sm nav-cta" href="ou-nous-trouver.html#prevenez">Prévenez-moi</a></li>
+    </ul></nav>
   </div>
 </header>
 
-<section class="page-hero">
-  <span class="bighex" aria-hidden="true"></span>
-  <div class="wrap">
-    <span class="eyebrow">Nos produits</span>
-    <h1>Des produits vrais, au fil des saisons</h1>
-    <p>Miels, jus de pomme, huile d'olive et produits de l'exploitation. Tout est issu du travail de la terre, des abeilles et des saisons — proposé en vente directe, à Boulternère.</p>
-  </div>
-</section>
+<section class="page-hero"><span class="bighex" aria-hidden="true"></span><div class="wrap">
+  <span class="eyebrow">Nos miels &amp; produits</span><h1>Le miel de nos abeilles, floraison par floraison</h1>
+  <p>Chaque miel vient d'un coin précis du Roussillon et d'un moment de l'année. Survolez la carte pour voir où butinent les abeilles — et repérez la miellerie, notre point de vente.</p>
+</div></section>
 
-<section class="section">
-  <div class="wrap prod-block">
-    <div class="img-col" data-reveal><img class="pimg" src="images/img1.png" alt="Miels artisanaux en pots"></div>
-    <div data-reveal>
-      <span class="eyebrow">Les miels</span>
-      <h3>Un miel par floraison</h3>
-      <p>Chaque miel porte le goût d'une floraison et d'un moment de l'année. Les récoltes ne se ressemblent pas d'une saison à l'autre : c'est ce qui en fait la valeur.</p>
-      <div class="chips" style="margin-top:1rem">
-        <span class="chip">Romarin — clair et doux</span>
-        <span class="chip">Lavande — floral</span>
-        <span class="chip">Fleurs sauvages / garrigue</span>
-        <span class="chip">Châtaignier — corsé, ambré</span>
-      </div>
-      <p style="margin-top:1rem;font-size:.95rem">La cristallisation d'un miel est naturelle : elle ne change ni sa qualité ni son goût.</p>
+<section class="section"><div class="wrap">
+  <div class="map-wrap" data-reveal>
+    <div id="map"></div>
+    <div class="map-legend">
+      <span><span class="lg-dot lg-butine"></span> Zones de butinage</span>
+      <span><span class="lg-dot lg-vente"></span> Point de vente — la miellerie (Bouleternère)</span>
     </div>
   </div>
+</div></section>
 
-  <div class="wrap" style="margin-top:clamp(2.4rem,5vw,4rem)">
-    <div class="highlight" data-reveal>
-      <span class="hl-hex" aria-hidden="true"></span>
-      <span class="tag-new">Nouveau</span>
-      <h3>Le miel d'avocat</h3>
-      <p>Butiné sur les vergers d'avocatiers de la famille, en Roussillon, le miel d'avocat est ambré foncé, avec des notes rondes et maltées. Une production rare et locale, en quantité limitée selon les floraisons.</p>
-      <p style="margin-top:1rem"><a class="btn btn-primary btn-sm" href="https://avocatduroussillon.com" target="_blank" rel="noopener">Voir les vergers d'avocatiers ↗</a></p>
-    </div>
+<section class="section section-alt"><div class="wrap">
+  <div class="section-head" data-reveal><span class="eyebrow">La gamme</span><h2>Tous nos miels</h2></div>
+  <div class="miel-list"><div class="miel-row" data-reveal><div class="mr-head"><h3>Romarin</h3><span class="chip chip-lieu">Corbières</span><span class="chip">mi-février → début mai</span></div><p>Butiné de mi-février à début mai dans les garrigues où ne poussent que le romarin et le thym. Contrairement à la plante, à l'odeur puissante, le miel est d'une finesse extraordinaire et d'une saveur incomparable.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Lavande papillon</h3><span class="chip chip-lieu">Montalba-le-Château</span><span class="chip">mars → mai</span></div><p>La lavande stœchas, dite « lavande papillon », propre aux Pyrénées-Orientales, fleurit de mars à mai et sent le thym — elle n'a rien de la lavande officinale. Le miel en tire une saveur délicate et suave, avec un beau parfum de garrigue. Un miel rare et recherché.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Garrigue</h3><span class="chip chip-lieu">Boule d'Amont</span><span class="chip">printemps</span></div><p>Butiné sur les garrigues sèches et arides de Boule d'Amont : bruyère blanche, ciste cotonneux, chêne vert. Un miel au goût rustique et sauvage, un peu caramel ou pain d'épices, qui cristallise naturellement en une texture crémeuse.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Châtaignier</h3><span class="chip chip-lieu">Boule d'Amont — gorges du Boulès</span><span class="chip">début août</span></div><p>Récolté début août dans les gorges du Boulès, entre Bouleternère et Amélie-les-Bains, là où les fleurs sauvages se mêlent au châtaignier. Un miel mi-garrigue mi-montagne, avec beaucoup de corps et de caractère, teinté d'une subtile amertume.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Callune</h3><span class="chip chip-lieu">Boule d'Amont</span><span class="chip">fin septembre</span></div><p>Récolté fin septembre à Boule d'Amont, essentiellement sur la bruyère callune. Un miel à la saveur douce-amère, particulièrement recherché des connaisseurs avertis.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Toutes fleurs</h3><span class="chip chip-lieu">Sahorre · Nyer</span><span class="chip">été</span></div><p>Butiné du côté de Sahorre et de Nyer. On y retrouve la bruyère blanche, l'acacia, le trèfle blanc et les fleurs de prairie. Un miel liquide et très parfumé.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Fleurs sauvages</h3><span class="chip chip-lieu">Nyer (1200 m) · Sahorre</span><span class="chip">début août</span></div><p>Récolté début août sur les montagnes de Nyer (1200 m) et de Sahorre : ronces, aubépines, framboisiers, tilleuls et fleurs de prairie sauvages, avec un soupçon de châtaignier.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Fleurs sauvages de montagne</h3><span class="chip chip-lieu">Vallée d'Eyne (1800 m)</span><span class="chip">début août</span></div><p>Récolté début août dans la vallée d'Eyne (1800 m), face à Font-Romeu. Dans cette vallée totalement inculte poussent un millier de plantes sauvages (rhododendron, sapin) qui donnent au miel une saveur exquise et un vrai parfum de haute montagne.</p></div>
+<div class="miel-row" data-reveal><div class="mr-head"><h3>Miel d'avocat <span class="tag-new">Nouveau</span></h3><span class="chip chip-lieu">Vergers du Roussillon</span><span class="chip">printemps</span></div><p>Nos abeilles butinent aussi les vergers d'avocatiers cultivés par la famille, en Roussillon. Il en naît un miel rare : ambré foncé, rond, avec des notes maltées. Une production très locale et limitée. · <a href="https://avocatduroussillon.com" target="_blank" rel="noopener">les vergers ↗</a></p></div></div>
+  <p class="tbl-note" style="margin-top:1.4rem" data-reveal>Chaque miel est produit en quantité limitée, selon ce que les abeilles récoltent dans l'année. La disponibilité varie donc au fil de la saison.</p>
+</div></section>
+
+<section class="section" id="produits-ferme"><div class="wrap">
+  <div class="section-head" data-reveal><span class="eyebrow">Les produits de la ferme</span><h2>Pas que du miel</h2><p>À côté des ruches, le verger et les oliviers donnent le reste de la saison. Tout vient de l'exploitation.</p></div>
+  <div class="prods">
+    <article class="card" data-reveal><img class="ph" src="images/img2.jpg" alt="Pommes et jus de pomme du verger"><div class="body"><h3>Pommes &amp; jus de pomme</h3><p>Des pommes du verger, pressées en pur jus sans sucre ajouté. Pommes fraîches aussi, en saison.</p></div></article>
+    <article class="card" data-reveal><img class="ph" src="images/img3.png" alt="Huile d'olive de l'exploitation"><div class="body"><h3>Huile d'olive</h3><p>De nos oliviers, extraite au fil de la récolte d'automne.</p></div></article>
+    <article class="card" data-reveal><img class="ph" src="images/img31.jpg" alt="Amandes et petits produits de la ferme"><div class="body"><h3>Amandes</h3><p>Amandes du verger, récoltées à la fin de l'été.</p></div></article>
   </div>
+  <div class="prod-chips" data-reveal><span class="pchip">Pommes</span><span class="pchip">Jus de pomme</span><span class="pchip">Huile d'olive</span><span class="pchip">Amandes</span><span class="pchip">Confitures</span><span class="pchip">Vinaigre</span></div>
+</div></section>
+<section class="section section-alt" id="calendrier"><div class="wrap">
+  <div class="section-head" data-reveal><span class="eyebrow">Au fil de l'année</span><h2>Le calendrier des récoltes</h2><p>Chaque produit a sa saison. Voici, mois par mois, quand les miels et les fruits sont récoltés.</p></div>
+  <div class="harvest-wrap" data-reveal><div class="harvest" role="img" aria-label="Calendrier indicatif des recoltes">
+<span class="hv-guide" style="grid-column:2;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:3;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:4;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:5;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:6;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:7;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:8;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:9;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:10;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:11;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:12;grid-row:1/-1"></span>
+<span class="hv-guide" style="grid-column:13;grid-row:1/-1"></span>
+<span class="hv-corner" style="grid-row:1;grid-column:1"></span>
+<span class="hv-m" style="grid-row:1;grid-column:2"><span class="full">Jan</span><span class="init">J</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:3"><span class="full">Fév</span><span class="init">F</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:4"><span class="full">Mar</span><span class="init">M</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:5"><span class="full">Avr</span><span class="init">A</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:6"><span class="full">Mai</span><span class="init">M</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:7"><span class="full">Juin</span><span class="init">J</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:8"><span class="full">Juil</span><span class="init">J</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:9"><span class="full">Aoû</span><span class="init">A</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:10"><span class="full">Sep</span><span class="init">S</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:11"><span class="full">Oct</span><span class="init">O</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:12"><span class="full">Nov</span><span class="init">N</span></span>
+<span class="hv-m" style="grid-row:1;grid-column:13"><span class="full">Déc</span><span class="init">D</span></span>
+<span class="hv-label" style="grid-row:2;grid-column:1">Romarin</span>
+<span class="hv-bar cat-miel" style="grid-row:2;grid-column:3/7" title="Romarin"></span>
+<span class="hv-label" style="grid-row:3;grid-column:1">Lavande papillon</span>
+<span class="hv-bar cat-miel" style="grid-row:3;grid-column:4/7" title="Lavande papillon"></span>
+<span class="hv-label" style="grid-row:4;grid-column:1">Miel d'avocat</span>
+<span class="hv-bar cat-miel" style="grid-row:4;grid-column:5/7" title="Miel d'avocat"></span>
+<span class="hv-label" style="grid-row:5;grid-column:1">Garrigue</span>
+<span class="hv-bar cat-miel" style="grid-row:5;grid-column:5/8" title="Garrigue"></span>
+<span class="hv-label" style="grid-row:6;grid-column:1">Toutes fleurs</span>
+<span class="hv-bar cat-miel" style="grid-row:6;grid-column:7/10" title="Toutes fleurs"></span>
+<span class="hv-label" style="grid-row:7;grid-column:1">Châtaignier</span>
+<span class="hv-bar cat-miel" style="grid-row:7;grid-column:9/10" title="Châtaignier"></span>
+<span class="hv-label" style="grid-row:8;grid-column:1">Fleurs sauvages</span>
+<span class="hv-bar cat-miel" style="grid-row:8;grid-column:9/10" title="Fleurs sauvages"></span>
+<span class="hv-label" style="grid-row:9;grid-column:1">Fleurs sauv. de montagne</span>
+<span class="hv-bar cat-miel" style="grid-row:9;grid-column:9/10" title="Fleurs sauv. de montagne"></span>
+<span class="hv-label" style="grid-row:10;grid-column:1">Callune</span>
+<span class="hv-bar cat-miel" style="grid-row:10;grid-column:10/11" title="Callune"></span>
+<span class="hv-label" style="grid-row:11;grid-column:1">Pommes & jus de pomme</span>
+<span class="hv-bar cat-fruit" style="grid-row:11;grid-column:10/12" title="Pommes & jus de pomme"></span>
+<span class="hv-label" style="grid-row:12;grid-column:1">Amandes</span>
+<span class="hv-bar cat-sec" style="grid-row:12;grid-column:10/11" title="Amandes"></span>
+<span class="hv-label" style="grid-row:13;grid-column:1">Huile d'olive</span>
+<span class="hv-bar cat-huile" style="grid-row:13;grid-column:12/14" title="Huile d'olive"></span>
+</div><div class="hv-legend"><span><i class="hv-key cat-miel"></i> Miels</span><span><i class="hv-key cat-fruit"></i> Pommes &amp; jus</span><span><i class="hv-key cat-sec"></i> Amandes</span><span><i class="hv-key cat-huile"></i> Huile d'olive</span></div><p class="hv-note"><strong>Le miel se conserve :</strong> on en a toute l'année, dans la limite des stocks. Ce calendrier montre <em>quand</em> chaque produit est récolté — les dates sont indicatives et varient avec la météo.</p></div>
+</div></section>
 
-  <div class="wrap prod-block rev" style="margin-top:clamp(2.4rem,5vw,4rem)">
-    <div class="img-col" data-reveal><img class="pimg" src="images/img2.jpg" alt="Bouteille de jus de pomme"></div>
-    <div data-reveal>
-      <span class="eyebrow">Jus de pomme</span>
-      <h3>Le verger en bouteille</h3>
-      <p>Un pur jus de pomme, issu de plusieurs variétés du verger, sans sucre ajouté ni concentré. Le goût dépend des pommes de l'année — c'est tout l'intérêt.</p>
-      <!-- À COMPLÉTER (Philippe) : conditionnements et contenances disponibles (bouteilles, bag-in-box…). -->
-    </div>
+<section class="section"><div class="wrap">
+  <div class="section-head" data-reveal><span class="eyebrow">Acheter en confiance</span><h2>Pourquoi acheter ici</h2></div>
+  <div class="reassure">
+    <div class="item" data-reveal><span class="hic"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><h3>Directement au producteur</h3><p>Vous achetez sur place, à la personne qui conduit les ruches.</p></div></div>
+    <div class="item" data-reveal><span class="hic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="4" ry="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/><path d="M9 7 6 4"/><path d="M15 7l3-3"/></svg></span><div><h3>Le miel des abeilles</h3><p>Récolté au naturel, au rythme de la colonie, sans standardisation.</p></div></div>
+    <div class="item" data-reveal><span class="hic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><h3>Local et de saison</h3><p>Tout vient du Roussillon, au fil des floraisons et des récoltes.</p></div></div>
   </div>
+</div></section>
 
-  <div class="wrap prod-block" style="margin-top:clamp(2.4rem,5vw,4rem)">
-    <div class="img-col" data-reveal><img class="pimg" src="images/img3.png" alt="Huile d'olive, amandes et confitures"></div>
-    <div data-reveal>
-      <span class="eyebrow">Les autres produits</span>
-      <h3>Huile d'olive, confitures, amandes, vinaigre</h3>
-      <p>Autour du rucher et du verger, quelques produits de l'exploitation complètent la saison : huile d'olive, confitures maison, amandes et vinaigre. Selon les récoltes et les stocks.</p>
-      <div class="chips" style="margin-top:1rem"><span class="chip">Huile d'olive</span><span class="chip">Confitures</span><span class="chip">Amandes</span><span class="chip">Vinaigre</span></div>
-    </div>
-  </div>
-</section>
+<section class="cta-band"><div class="wrap cta-inner">
+  <div><h2>Envie de goûter&nbsp;?</h2><p>Retrouvez-nous à la miellerie, à Bouleternère — ou soyez prévenu dès qu'un nouveau miel ou un produit de saison arrive.</p></div>
+  <div class="cta-actions"><a class="btn btn-primary" href="ou-nous-trouver.html#points-de-vente">Où nous trouver</a><a class="btn btn-ghost" href="ou-nous-trouver.html#prevenez">Prévenez-moi</a></div>
+</div></section>
 
-<section class="section section-alt">
-  <div class="wrap">
-    <div class="section-head" data-reveal><span class="eyebrow">Le calendrier</span><h2>Ce qui se récolte, et quand</h2><p>Parce que tout suit les saisons, voici un repère pour savoir à quoi s'attendre au fil de l'année.</p></div>
-    <div class="tbl-wrap" data-reveal>
-      <table class="tbl">
-        <thead><tr><th>Produit</th><th>Floraison / récolte</th><th>Disponibilité</th></tr></thead>
-        <tbody>
-          <tr><td>Miel de romarin</td><td>Floraison mars–avril</td><td class="peak">Dès le printemps</td></tr>
-          <tr><td>Miel de garrigue / fleurs sauvages</td><td>Printemps</td><td>Printemps–été</td></tr>
-          <tr><td>Miel de lavande</td><td>Juin–juillet</td><td class="peak">Été</td></tr>
-          <tr><td>Miel de châtaignier</td><td>Juillet–août</td><td>Fin d'été</td></tr>
-          <tr><td>Miel d'avocat</td><td>Floraison des avocatiers (printemps)</td><td>Quantité limitée</td></tr>
-          <tr><td>Jus de pomme</td><td>Pommes récoltées à l'automne</td><td>Toute l'année (selon stocks)</td></tr>
-          <tr><td>Huile d'olive</td><td>Olives récoltées automne–hiver</td><td class="peak">Huile nouvelle en fin d'année</td></tr>
-          <tr><td>Amandes</td><td>Récolte fin d'été</td><td>Automne</td></tr>
-          <tr><td>Confitures</td><td>Selon les fruits de saison</td><td>Toute l'année</td></tr>
-        </tbody>
-      </table>
-      <p class="tbl-note">Calendrier indicatif — les dates réelles varient chaque année selon le climat et les floraisons.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head" data-reveal><span class="eyebrow">Acheter en confiance</span><h2>Pourquoi acheter ici</h2></div>
-    <div class="reassure">
-      <div class="item" data-reveal><span class="hic"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><h3>Directement au producteur</h3><p>Pas d'intermédiaire : vous achetez sur place, à la personne qui produit.</p></div></div>
-      <div class="item" data-reveal><span class="hic"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c.5 6-1 10-4 12a6.9 6.9 0 0 1-4 2Z"/><line x1="2" y1="22" x2="11" y2="13"/></svg></span><div><h3>Local et de saison</h3><p>Tout vient de Boulternère et des environs, au rythme des récoltes.</p></div></div>
-      <div class="item" data-reveal><span class="hic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><h3>Sans artifice</h3><p>Miels récoltés au naturel, jus sans sucre ajouté, produits fermiers.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap cta-inner">
-    <div>
-      <h2>Envie de goûter&nbsp;?</h2>
-      <p>Retrouvez-nous à la miellerie, à Boulternère — ou soyez prévenu avant chaque vente.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn btn-primary" href="ou-nous-trouver.html#points-de-vente">Où nous trouver</a>
-      <a class="btn btn-ghost" href="ou-nous-trouver.html#prevenez">Prévenez-moi</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <div class="brandline"><img src="images/logo.png" alt=""><strong>Philippe Thorent</strong></div>
-        <div>Apiculteur et producteur local<br>Boulternère (66) · Roussillon</div>
-        <div class="platform">Une démarche locale du Roussillon, aux côtés d'<a href="https://avocatduroussillon.com" target="_blank" rel="noopener">Avocats du Roussillon</a>.</div>
-      </div>
-      <div>
-        <h4>Nous trouver</h4>
-        <div>Route de Corbère<br>Foun Del Boulès<br>66130 Bouleternère<br><a href="tel:+33614522800">06 14 52 28 00</a></div>
-      </div>
-      <div>
-        <h4>Le site</h4>
-        <ul>
-          <li><a href="le-producteur.html">Le producteur</a></li>
-          <li><a href="nos-produits.html">Nos produits</a></li>
-          <li><a href="ou-nous-trouver.html">Où nous trouver</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copy">
-      <span>© 2026 Philippe Thorent</span>
-      <span>Miels artisanaux et produits du terroir · Pyrénées-Orientales</span>
-    </div>
-  </div>
-</footer>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const t = document.querySelector('.nav-toggle');
-  const m = document.getElementById('primary-nav');
-  if (t && m){
-    t.addEventListener('click', () => { const o = m.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
-    m.addEventListener('click', e => { if (e.target.tagName === 'A') m.classList.remove('open'); });
-  }
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const els = document.querySelectorAll('[data-reveal]');
-  if (reduce || !('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); }
-  else {
-    const io = new IntersectionObserver((en) => en.forEach(x => { if (x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target);} }), { threshold: .12 });
-    els.forEach(el => io.observe(el));
-  }
+(function(){
+  var el=document.getElementById('map'); if(!el||typeof L==='undefined') return;
+  var map=L.map('map',{scrollWheelZoom:false});
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+  var zones=[{lieu:"Boule d'Amont — gorges du Boulès",lat:42.567,lon:2.643,miels:"Châtaignier · Garrigue · Callune"},{lieu:"Montalba-le-Château",lat:42.686,lon:2.615,miels:"Lavande papillon"},{lieu:"Corbières (nord du 66)",lat:42.82,lon:2.7,miels:"Romarin"},{lieu:"Sahorre & Nyer — Conflent",lat:42.556,lon:2.34,miels:"Toutes fleurs · Fleurs sauvages"},{lieu:"Vallée d'Eyne — Cerdagne (1800 m)",lat:42.459,lon:2.075,miels:"Fleurs sauvages de montagne"},{lieu:"Vergers du Roussillon (avocatiers)",lat:42.69,lon:2.79,miels:"Miel d'avocat"}];
+  var pts=[];
+  zones.forEach(function(z){
+    var mk=L.circleMarker([z.lat,z.lon],{radius:9,color:'#8A5713',weight:2,fillColor:'#C4881E',fillOpacity:.92}).addTo(map);
+    mk.bindTooltip('<b>'+z.miels+'</b><br>'+z.lieu,{direction:'top'});
+    mk.bindPopup('<b>'+z.lieu+'</b><br>'+z.miels);
+    pts.push([z.lat,z.lon]);
+  });
+  var pv=L.circleMarker([42.6603,2.6239],{radius:12,color:'#C4881E',weight:4,fillColor:'#2E2118',fillOpacity:1}).addTo(map);
+  pv.bindTooltip('Point de vente — la miellerie',{permanent:true,direction:'right',offset:[10,0],className:'pv-tip'});
+  pv.bindPopup('<b>La miellerie — point de vente</b><br>Route de Corbère, 66130 Bouleternère');
+  pts.push([42.6603,2.6239]);
+  map.fitBounds(pts,{padding:[35,35]});
+})();
+</script>
+<script>
+  var t=document.querySelector('.nav-toggle'), m=document.getElementById('primary-nav');
+  if(t&&m){t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});m.addEventListener('click',function(e){if(e.target.tagName==='A')m.classList.remove('open');});}
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches, els=document.querySelectorAll('[data-reveal]');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
+  else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});els.forEach(function(el){io.observe(el);});}
+
+  // Prochain jour d'ouverture (hero). Horaires à garder synchro avec la page "Où nous trouver".
+  (function(){
+    var el=document.getElementById('open-badge'); if(!el) return;
+    var H={1:[[8,12],[14,18]],2:[[8,12],[14,18]],3:[[8,12],[14,18]],4:[],5:[[8,12],[14,18]],6:[[8,12]],0:[]};
+    var jours=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+    var mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+    function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+    function fmt(cr){return cr.map(function(c){return c[0]+' h–'+c[1]+' h';}).join(' · ');}
+    var now=new Date(), nowH=now.getHours()+now.getMinutes()/60, openNow=false;
+    (H[now.getDay()]||[]).forEach(function(c){if(c[0]<=nowH&&nowH<c[1])openNow=true;});
+    var chosen=null, off=null;
+    for(var i=0;i<8;i++){var d=new Date(now);d.setDate(now.getDate()+i);var cr=H[d.getDay()];if(!cr||!cr.length)continue;if(i===0&&!cr.some(function(c){return c[1]>nowH;}))continue;chosen={date:d,cr:cr};off=i;break;}
+    if(!chosen){el.style.display='none';return;}
+    var wd=chosen.date.getDay(), dt;
+    if(off===0)dt='Aujourd’hui'; else if(off===1)dt='Demain ('+jours[wd]+')'; else dt=cap(jours[wd])+' '+chosen.date.getDate()+' '+mois[chosen.date.getMonth()];
+    var lab=document.getElementById('open-label'), info=document.getElementById('open-info');
+    if(lab)lab.textContent=openNow?'Ouvert maintenant':'Prochaine ouverture';
+    if(info)info.innerHTML='<b>'+dt+' · '+fmt(chosen.cr)+'</b>, à la miellerie';
+  })();
+
+  // Articles : 3 derniers sur l'accueil (#home-articles), tous sur la page carnet (#all-articles).
+  (function(){
+    if(typeof window.ARTICLES==='undefined') return;
+    var mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+    var list=window.ARTICLES.slice().sort(function(a,b){return b.date.localeCompare(a.date);});
+    function card(a){
+      var d=new Date(a.date+'T00:00:00'), ds=d.getDate()+' '+mois[d.getMonth()]+' '+d.getFullYear();
+      return '<a class="article-card" href="'+a.slug+'.html" data-reveal>'+(a.image?'<img src="'+a.image+'" alt="">':'')+
+        '<div class="ac-body"><span class="ac-date">'+ds+'</span><h3>'+a.titre+'</h3><p>'+a.extrait+'</p><span class="ac-link">Lire l’article →</span></div></a>';
+    }
+    var home=document.getElementById('home-articles'); if(home) home.innerHTML=list.slice(0,3).map(card).join('');
+    var all=document.getElementById('all-articles'); if(all) all.innerHTML=list.length?list.map(card).join(''):'<p>Les premiers articles arrivent bientôt.</p>';
+    document.querySelectorAll('.article-card[data-reveal]').forEach(function(el){el.classList.add('in');});
+  })();
 </script>
 </body>
 </html>

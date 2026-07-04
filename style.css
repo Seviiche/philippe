@@ -268,3 +268,84 @@ a:hover{color:var(--honey)}
 .legal h2{font-size:1.4rem;margin:2rem 0 .6rem}
 .legal p{color:var(--bark-soft);margin:.3rem 0}
 .legal .todo{background:#FBF1D9;border:1px dashed var(--honey);border-radius:8px;padding:.15rem .5rem;color:var(--honey-deep);font-weight:600;font-size:.92rem}
+
+/* ===================== MIELS (accueil) ===================== */
+.miels-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.1rem}
+.miel-card{display:flex;gap:.85rem;background:var(--comb);border:1px solid var(--line);border-radius:16px;padding:1rem 1.1rem;transition:transform .18s ease,box-shadow .22s ease}
+.miel-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.miel-hex{flex:0 0 auto;width:26px;height:29px;margin-top:.25rem;background:var(--honey);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.miel-txt h3{font-size:1.18rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.miel-new{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--olive);padding:.16rem .45rem;border-radius:999px}
+.miel-lieu{display:block;font-size:.82rem;color:var(--honey-deep);font-weight:600;margin:.15rem 0 .35rem}
+.miel-txt p{margin:0;color:var(--bark-soft);font-size:.93rem;line-height:1.5}
+
+/* ===================== MIELS (page produits) ===================== */
+.miel-list{display:grid;gap:1rem}
+.miel-row{background:var(--comb);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.3rem}
+.mr-head{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:.5rem}
+.mr-head h3{font-size:1.3rem}
+.chip-lieu{background:rgba(196,136,30,.12);border-color:transparent;color:var(--honey-deep);font-weight:600}
+.miel-row p{margin:0;color:var(--bark-soft)}
+
+/* ===================== CARTE (Leaflet) ===================== */
+.map-wrap{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--comb);box-shadow:var(--shadow)}
+#map{height:clamp(360px,55vh,520px);width:100%;background:#EDE7DA;z-index:0}
+.leaflet-container{font-family:"Work Sans",sans-serif}
+.map-legend{display:flex;flex-wrap:wrap;gap:1.2rem;padding:.9rem 1.2rem;font-size:.9rem;color:var(--bark-soft);border-top:1px solid var(--line)}
+.map-legend span{display:inline-flex;align-items:center;gap:.5rem}
+.lg-dot{width:14px;height:14px;border-radius:50%;display:inline-block}
+.lg-butine{background:var(--honey);border:2px solid var(--honey-deep)}
+.lg-vente{background:var(--bark);border:3px solid var(--honey)}
+.leaflet-tooltip.pv-tip{background:var(--bark);color:#F5ECD9;border:0;font-weight:600;font-size:.82rem;box-shadow:var(--shadow)}
+.leaflet-tooltip.pv-tip::before{border-right-color:var(--bark)}
+
+/* ===================== ARTICLES ===================== */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem}
+.article-card{display:flex;flex-direction:column;background:var(--comb);border:1px solid var(--line);border-radius:18px;overflow:hidden;color:inherit;transition:transform .18s ease,box-shadow .22s ease}
+.article-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.article-card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--wax-deep)}
+.ac-body{padding:1.15rem 1.25rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.ac-date{font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--honey-deep);font-weight:600}
+.ac-body h3{font-size:1.3rem;margin:.35rem 0 .5rem}
+.ac-body p{color:var(--bark-soft);font-size:.95rem;margin:0 0 1rem;flex:1}
+.ac-link{font-weight:600;color:var(--honey-deep)}
+.article-card:hover .ac-link{color:var(--honey)}
+
+/* Page article */
+.article-hero .crumb{display:inline-block;font-weight:600;color:var(--honey-deep);margin-bottom:.6rem}
+.article-body{max-width:720px}
+.article-img{width:100%;border-radius:18px;box-shadow:var(--shadow);margin-bottom:1.6rem;aspect-ratio:16/9;object-fit:cover}
+.article-body p{color:var(--bark-soft);font-size:1.06rem;line-height:1.7;margin:0 0 1.1rem}
+.article-body p:first-of-type{color:var(--bark)}
+.article-back{margin-top:1.6rem}
+
+/* ===================== PASTILLES PRODUITS ===================== */
+.prod-chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
+.pchip{display:inline-flex;align-items:center;gap:.4rem;background:var(--comb);border:1px solid var(--line);color:var(--bark-soft);font-weight:600;font-size:.9rem;padding:.45rem .9rem;border-radius:999px}
+.pchip::before{content:"";width:8px;height:9px;background:var(--olive);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+
+/* ===================== CALENDRIER DES RÉCOLTES ===================== */
+.harvest-wrap{overflow-x:auto}
+.harvest{display:grid;grid-template-columns:150px repeat(12,1fr);align-items:center;column-gap:0;row-gap:.5rem;background:var(--comb);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;min-width:560px;position:relative}
+.hv-guide{border-left:1px dashed var(--line)}
+.hv-guide:first-of-type{border-left:0}
+.hv-corner{grid-row:1}
+.hv-m{grid-row:1;text-align:center;font-size:.74rem;font-weight:600;color:var(--bark-soft);padding-bottom:.35rem}
+.hv-m .init{display:none}
+.hv-label{font-size:.86rem;font-weight:600;color:var(--bark);padding-right:.7rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hv-bar{height:15px;border-radius:999px;margin:0 2px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.cat-miel{background:linear-gradient(90deg,#D89A2E,#B87513)}
+.cat-fruit{background:#B5533B}
+.cat-sec{background:#C9A66B}
+.cat-huile{background:#6E7A4B}
+.hv-legend{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:1rem;font-size:.88rem;color:var(--bark-soft)}
+.hv-legend span{display:inline-flex;align-items:center;gap:.45rem}
+.hv-key{width:15px;height:15px;border-radius:4px;display:inline-block}
+.hv-note{margin-top:.9rem;font-size:.92rem;color:var(--bark-soft);line-height:1.55}
+.hv-note strong{color:var(--bark)}
+@media (max-width:640px){
+  .harvest{grid-template-columns:104px repeat(12,1fr);min-width:0;padding:.9rem .7rem}
+  .hv-m{font-size:.7rem}.hv-m .full{display:none}.hv-m .init{display:inline}
+  .hv-label{font-size:.76rem;padding-right:.4rem}
+  .hv-bar{height:13px;margin:0 1px}
+}
