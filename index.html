@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
 <title>Miels Thorent — Le miel de nos abeilles · Bouleternère (66)</title>
 <meta name="description" content="Miels du Roussillon récoltés au fil des floraisons par Philippe Thorent, apiculteur à Bouleternère (66) : romarin, lavande, châtaignier, callune, miel d'avocat… Jus de pomme, huile d'olive. Vente directe.">
 <link rel="icon" href="images/logo.png" type="image/png">
@@ -43,7 +44,7 @@
 </header>
 
 <section class="hero"><div class="wrap">
-  <div class="hero-copy" data-reveal>
+  <div class="hero-copy">
     <span class="eyebrow">Bouleternère · Roussillon (66)</span>
     <h1>Le miel<br>de nos abeilles</h1>
     <p class="lede">Philippe est apiculteur. Mais le miel, ce sont ses abeilles qui le font — au fil des floraisons du Roussillon. Lui les écoute, les respecte, et récolte ce qu'elles veulent bien donner.</p>
@@ -56,7 +57,7 @@
       <a class="btn btn-ghost" href="ou-nous-trouver.html#points-de-vente">Où nous trouver</a>
     </div>
   </div>
-  <div class="hero-media" data-reveal><div class="hex-frame"><img src="images/hero.png" alt="Les miels et produits de l'exploitation"></div></div>
+  <div class="hero-media"><div class="hex-frame"><img src="images/hero.png" alt="Les miels et produits de l'exploitation"></div></div>
 </div></section>
 
 <section class="section section-alt" id="producteur"><div class="wrap producer">
@@ -130,9 +131,22 @@
 <script>
   var t=document.querySelector('.nav-toggle'), m=document.getElementById('primary-nav');
   if(t&&m){t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o);});m.addEventListener('click',function(e){if(e.target.tagName==='A')m.classList.remove('open');});}
+  // Header compact au défilement
+  var hdr=document.querySelector('.site-header');
+  if(hdr){var onScr=function(){hdr.classList.toggle('scrolled',window.scrollY>8);};onScr();window.addEventListener('scroll',onScr,{passive:true});}
+
+  // Apparitions au défilement, en cascade
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches, els=document.querySelectorAll('[data-reveal]');
+  els.forEach(function(el){
+    var p=el.parentNode, sibs=[]; if(p){sibs=Array.prototype.filter.call(p.children,function(c){return c.nodeType===1&&c.hasAttribute('data-reveal');});}
+    var i=sibs.indexOf(el); if(i>0) el.style.setProperty('--d',(Math.min(i,6)*0.07).toFixed(2)+'s');
+  });
+  document.querySelectorAll('.hv-bar').forEach(function(b,i){b.style.setProperty('--d',(Math.min(i,14)*0.05).toFixed(2)+'s');});
   if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
-  else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});els.forEach(function(el){io.observe(el);});}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0.01,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }
 
   // Prochain jour d'ouverture (hero). Horaires à garder synchro avec la page "Où nous trouver".
   (function(){
