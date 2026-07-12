@@ -404,3 +404,77 @@ html{scroll-padding-top:86px}
 /* Barres du calendrier : remplissage à l'apparition */
 .js .harvest .hv-bar{transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0s)}
 .harvest-wrap.in .hv-bar{transform:scaleX(1)}
+
+/* ============ MAJ v2 — juillet 2026 ============ */
+
+/* Pop-up promotion du moment */
+.promo-pop{position:fixed;right:18px;bottom:18px;z-index:999;max-width:320px;background:#fff;border:2px solid #C4881E;border-radius:14px;box-shadow:0 10px 30px rgba(46,33,24,.25);padding:1rem 1.1rem;font-size:.95rem;animation:promoIn .5s ease}
+@keyframes promoIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.promo-pop .pp-tag{display:inline-block;background:#C4881E;color:#fff;font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.2rem .6rem;margin-bottom:.45rem}
+.promo-pop h3{margin:.1rem 0 .3rem;font-size:1.05rem}
+.promo-pop p{margin:0 0 .6rem;color:#5a4a3a}
+.promo-pop .pp-close{position:absolute;top:8px;right:10px;border:0;background:none;font-size:1.15rem;line-height:1;cursor:pointer;color:#8a7a6a}
+.promo-pop .pp-prices{display:flex;gap:.5rem;margin:.5rem 0 .7rem;flex-wrap:wrap}
+.promo-pop .pp-price{background:#FFF4D6;border:1px solid #e8d9ae;border-radius:10px;padding:.35rem .6rem;font-weight:600;color:#2E2118}
+@media(max-width:480px){.promo-pop{left:12px;right:12px;max-width:none}}
+
+/* Bandeau promo (page produits) */
+.promo-band{background:linear-gradient(100deg,#C4881E,#a76f12);color:#fff;border-radius:16px;padding:1.3rem 1.5rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+.promo-band img{width:130px;height:auto;flex:0 0 auto}
+.promo-band h3{margin:.1rem 0 .35rem;font-size:1.35rem;color:#fff}
+.promo-band p{margin:0;color:#fff8ea}
+.promo-band .pp-price{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:.4rem .7rem;font-weight:600;display:inline-block;margin:.5rem .4rem 0 0}
+
+/* Prix « à partir de » */
+.miel-price{display:inline-block;margin-top:.5rem;font-weight:600;color:#8A5713;font-size:.92rem}
+.miel-card{position:relative}
+.miel-card a.miel-link{position:absolute;inset:0;border-radius:inherit}
+.miel-card:hover{transform:translateY(-2px);transition:transform .18s ease}
+.price-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+.price-chip{background:#FFF4D6;border:1px solid #e8d9ae;border-radius:999px;padding:.25rem .7rem;font-size:.85rem;font-weight:600;color:#2E2118}
+.chip-parfum{background:#f6efe2}
+
+/* Produits de la ferme : photos détourées */
+.prods .card .ph-cut{width:100%;height:220px;object-fit:contain;background:linear-gradient(180deg,#faf6ec,#f3ecdc);padding:14px}
+
+/* Miels non chauffés */
+.vivant{display:flex;gap:1.3rem;align-items:center;background:#FFF9EC;border:1px solid #eadfc2;border-radius:16px;padding:1.2rem 1.4rem;flex-wrap:wrap}
+.vivant img{width:190px;border-radius:12px}
+.vivant p{margin:.3rem 0 0}
+
+/* Galerie bougies */
+.bougies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1rem;margin-top:1.2rem}
+.bougies-grid figure{margin:0;background:linear-gradient(180deg,#faf6ec,#f1e9d6);border-radius:14px;padding:.9rem .6rem .6rem;text-align:center}
+.bougies-grid img{width:100%;height:130px;object-fit:contain}
+.bougies-grid figcaption{font-size:.82rem;color:#5a4a3a;margin-top:.4rem}
+
+/* Bandeau partenaires défilant */
+.partners-band{background:#2E2118;color:#f5edda;padding:.9rem 0;overflow:hidden;position:relative}
+.partners-band .pb-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;padding:0 1.2rem}
+.pb-scroll{overflow:hidden;flex:1;min-width:220px}
+.pb-track{display:inline-flex;gap:2.6rem;white-space:nowrap;animation:pbScroll 36s linear infinite;padding-right:2.6rem}
+.partners-band:hover .pb-track{animation-play-state:paused}
+@keyframes pbScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.pb-track a{color:#f5edda;text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:.5rem}
+.pb-track a:hover{color:#e8b954}
+.pb-track .hexdot{width:9px;height:10px;background:#C4881E;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+@media(prefers-reduced-motion:reduce){.pb-track{animation:none;flex-wrap:wrap;white-space:normal}}
+
+/* Page partenaires */
+.partner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem}
+.partner-card{background:#fff;border:1px solid #eadfc2;border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.6rem}
+.partner-badge{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#C4881E,#8A5713);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.3rem;font-family:'Fraunces',serif}
+.partner-card h3{margin:.2rem 0 0}
+.partner-card .pc-lieu{color:#8A5713;font-size:.88rem;font-weight:600}
+.partner-card p{margin:0;font-size:.95rem;color:#5a4a3a;flex:1}
+.partner-card .arrow-link{font-size:.92rem}
+
+/* Avis */
+.avis-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
+
+/* Pied de page */
+.site-footer{background:#241a12;color:#cbbfae;padding:2.2rem 0 1.6rem;font-size:.92rem}
+.site-footer a{color:#e8d9ae}
+.site-footer .foot-grid{display:flex;gap:2rem;flex-wrap:wrap;justify-content:space-between}
+.site-footer h4{color:#fff;margin:0 0 .5rem;font-size:1rem}
+.site-footer p{margin:.2rem 0}
