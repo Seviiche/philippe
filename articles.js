@@ -4,28 +4,28 @@ window.ARTICLES = [
     "titre": "L'extraction en douceur : pourquoi notre miel garde son goût",
     "date": "2026-07-12",
     "image": "images/article-extraction.webp",
-    "extrait": "Pas de chauffage, extracteur tangentiel, 6 cadres à la fois, filtration à froid : le process complet, pensé pour préserver les arômes."
+    "extrait": "Sans chauffage, extracteur tangentiel, six cadres à la fois, filtration à froid : notre procédé pour préserver arômes et enzymes."
   },
   {
     "slug": "le-nectar-de-bouche-en-bouche",
-    "titre": "Le nectar, de bouche en bouche",
+    "titre": "Le nectar de bouche en bouche : comment naît le miel",
     "date": "2026-07-11",
     "image": "images/article-trophallaxie.webp",
-    "extrait": "La butineuse ne stocke pas son nectar : elle le transmet à une autre abeille, qui l'étale en gouttelettes pour le déshydrater sous 18 % d'humidité."
+    "extrait": "Trophallaxie, enzymes, évaporation : comment les abeilles transforment un nectar à 80 % d'eau en miel à 18 %, de bouche en bouche."
   },
   {
     "slug": "qui-fait-quoi-dans-la-ruche",
     "titre": "Qui fait quoi dans la ruche ?",
     "date": "2026-07-10",
     "image": "images/article-hierarchie.webp",
-    "extrait": "Reine, ouvrières, faux-bourdons : comment fonctionne la colonie, et pourquoi chaque abeille change de métier au fil de sa vie."
+    "extrait": "Reine, ouvrières, faux-bourdons : l'organisation d'une colonie et pourquoi chaque ouvrière change de métier au fil de sa vie."
   },
   {
     "slug": "des-centaines-de-visites-pour-chaque-larve",
-    "titre": "Des centaines de visites pour chaque larve",
+    "titre": "Chaque larve, nourrie plus de mille fois par jour",
     "date": "2026-07-09",
     "image": "images/article-larves.webp",
-    "extrait": "Chaque larve est nourrie et inspectée des centaines de fois par jour par les nourrices. Un soin permanent, à l'échelle de la ruche."
+    "extrait": "Plus de mille visites par jour pour une seule larve : plongée dans le couvain, cœur vivant de la ruche, et le régime qui fait les reines."
   },
   {
     "slug": "ce-sont-les-abeilles-qui-decident",

@@ -6,7 +6,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <title>Le carnet — Miels Thorent</title>
 <meta name="description" content="Le carnet de l'apiculteur : articles sur les miels du Roussillon, les floraisons, les abeilles et le travail au rucher de Philippe Thorent.">
-<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="icon" href="images/favicon.png" type="image/png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Le carnet — Miels Thorent">
 <meta property="og:description" content="Le carnet de l'apiculteur : articles sur les miels du Roussillon, les floraisons, les abeilles et le travail au rucher de Philippe Thorent.">
@@ -16,6 +16,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+<link rel="canonical" href="https://philippe-thorent.fr/le-carnet.html">
+<meta property="og:url" content="https://philippe-thorent.fr/le-carnet.html">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -130,5 +132,11 @@
     <p><a href="mentions-legales.html">Mentions légales</a></p></div>
 </div></footer>
 
+<script>
+/* Ancres : révèle le contenu et recale sous le header fixe, même via lien externe */
+(function(){function go(){var h=location.hash;if(!h||h.length<2)return;var el;try{el=document.querySelector(h);}catch(e){return;}if(!el)return;document.querySelectorAll('[data-reveal]').forEach(function(x){x.classList.add('in');});el.scrollIntoView();}
+if(location.hash){window.addEventListener('load',function(){setTimeout(go,60);});}
+window.addEventListener('hashchange',go);})();
+</script>
 </body>
 </html>

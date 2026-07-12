@@ -478,3 +478,21 @@ html{scroll-padding-top:86px}
 .site-footer .foot-grid{display:flex;gap:2rem;flex-wrap:wrap;justify-content:space-between}
 .site-footer h4{color:#fff;margin:0 0 .5rem;font-size:1rem}
 .site-footer p{margin:.2rem 0}
+
+/* Ancrage miels : décalage sous le header fixe + surbrillance à l'arrivée */
+.miel-row{scroll-margin-top:96px}
+.miel-row:target{animation:targetGlow 2.4s ease}
+@keyframes targetGlow{0%,100%{background:transparent}15%,45%{background:#FFF4D6}}
+.miel-card .miel-link{z-index:3}
+.miel-card .miel-txt{position:relative;z-index:1}
+
+/* Puces produits sous le hero */
+.hero-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0 0;padding:0}
+.hero-chips li{background:rgba(196,136,30,.12);border:1px solid rgba(196,136,30,.35);color:#8A5713;border-radius:999px;padding:.3rem .75rem;font-size:.85rem;font-weight:600}
+
+/* Sous-titres dans les articles */
+.article-body h2{font-family:"Fraunces",serif;font-size:1.4rem;margin:2rem 0 .6rem;color:#2E2118}
+.article-body p+p{margin-top:1rem}
+
+/* Ancrage de toutes les sections sous le header fixe */
+section[id],[id].prevenez,#prevenez,#points-de-vente,#promotion,#produits-ferme,#bougies,#avis,#vivant,#carnet{scroll-margin-top:92px}
