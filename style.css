@@ -37,14 +37,15 @@ a:hover{color:var(--honey)}
 
 /* ---------- Header ---------- */
 .site-header{position:-webkit-sticky;position:sticky;top:0;z-index:60;background:rgba(245,236,217,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:70px}
-.brand{display:flex;align-items:center;gap:.7rem}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;height:70px;flex-wrap:nowrap}
+.brand{display:flex;align-items:center;gap:.7rem;flex:0 0 auto}
 .brand img{width:44px;height:44px;object-fit:contain}
 .brand .bname{font-family:"Fraunces",serif;font-weight:600;font-size:1.14rem;line-height:1.05}
-.brand .btag{font-size:.72rem;letter-spacing:.02em;color:var(--bark-soft);line-height:1}
-#primary-nav ul{display:flex;gap:1.7rem;list-style:none;margin:0;padding:0}
-#primary-nav a{font-size:.94rem;font-weight:500;color:var(--bark)}
+.brand .btag{font-size:.72rem;letter-spacing:.02em;color:var(--bark-soft);line-height:1;white-space:nowrap}
+#primary-nav ul{display:flex;gap:1.15rem;list-style:none;margin:0;padding:0;align-items:center}
+#primary-nav a{font-size:.92rem;font-weight:500;color:var(--bark);white-space:nowrap}
 #primary-nav a:hover{color:var(--honey-deep)}
+#primary-nav{flex:0 1 auto}
 .nav-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;padding:.5rem .6rem;cursor:pointer;color:var(--bark)}
 .nav-toggle svg{display:block}
 
@@ -151,7 +152,7 @@ a:hover{color:var(--honey)}
 .footer .copy{border-top:1px solid rgba(243,233,212,.14);margin-top:1.8rem;padding-top:1.2rem;color:#a89478;display:flex;flex-wrap:wrap;gap:.4rem;justify-content:space-between}
 
 /* ---------- Révélation au scroll ---------- */
-.js [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0s)}
+.js [data-reveal]{opacity:0;transform:translateY(10px);transition:opacity .38s ease-out,transform .38s ease-out;transition-delay:var(--d,0s)}
 [data-reveal].in{opacity:1;transform:none}
 
 /* ---------- Responsive ---------- */
@@ -161,7 +162,7 @@ a:hover{color:var(--honey)}
   .producer .pimg{grid-row:1}
   .footer .fgrid{grid-template-columns:1fr 1fr}
 }
-@media (max-width:720px){
+@media (max-width:1024px){
   .nav-toggle{display:inline-flex}
   #primary-nav{position:absolute;left:0;right:0;top:70px;background:var(--wax);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease}
   #primary-nav.open{max-height:60vh}
@@ -366,7 +367,7 @@ html{scroll-padding-top:86px}
 .site-header.scrolled .brand img{transform:scale(.88)}
 
 /* Soulignement animé des liens de nav (desktop) */
-@media (min-width:721px){
+@media (min-width:1025px){
   #primary-nav a:not(.nav-cta):not(.active){position:relative}
   #primary-nav a:not(.nav-cta):not(.active)::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--honey);border-radius:2px;transition:width .28s cubic-bezier(.22,.61,.36,1)}
   #primary-nav a:not(.nav-cta):not(.active):hover::after{width:100%}
@@ -496,3 +497,86 @@ html{scroll-padding-top:86px}
 
 /* Ancrage de toutes les sections sous le header fixe */
 section[id],[id].prevenez,#prevenez,#points-de-vente,#promotion,#produits-ferme,#bougies,#avis,#vivant,#carnet{scroll-margin-top:92px}
+
+/* Mention prix unique en haut des miels (accueil) */
+.miels-from{margin-top:.6rem;font-size:.98rem;color:#5a4a3a}
+.miels-from a{color:#8A5713;text-decoration:underline}
+
+/* Pop-up promo renforcée pour bien ressortir */
+.promo-pop{border-width:3px;box-shadow:0 14px 40px rgba(46,33,24,.32);background:linear-gradient(180deg,#fffdf7,#fff5e0)}
+.promo-pop .pp-tag{background:#c0392b;animation:promoPulse 1.8s ease-in-out infinite}
+@keyframes promoPulse{0%,100%{box-shadow:0 0 0 0 rgba(192,57,43,.45)}50%{box-shadow:0 0 0 7px rgba(192,57,43,0)}}
+.promo-pop h3{color:#8A5713}
+@media(prefers-reduced-motion:reduce){.promo-pop .pp-tag{animation:none}}
+
+/* Prix en promotion (barré + tarif promo) */
+.price-chip.price-promo{background:#fdecea;border-color:#e6a9a1;color:#8a2f22}
+.price-chip .price-old{text-decoration:line-through;color:#a98;font-weight:500;margin-right:.15rem}
+.price-chip .pp-flag{background:#c0392b;color:#fff;border-radius:999px;padding:.05rem .4rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;margin-right:.2rem}
+.promo-note{margin:.5rem 0 0;font-size:.85rem;color:#8a2f22;font-weight:500}
+
+/* Espacements réduits entre sections rapprochées */
+#promo-accueil{padding-top:1rem;padding-bottom:.6rem}
+#promo-accueil + #miels{padding-top:1.4rem}
+#bougies{padding-bottom:1.2rem}
+#bougies + #vivant{padding-top:1.2rem}
+#vivant{padding-bottom:1.2rem}
+
+/* ===== Carte SVG des zones de butinage ===== */
+.beemap-wrap{margin:0;border-radius:20px;overflow:hidden;box-shadow:0 12px 34px rgba(46,33,24,.20);border:1px solid #e4d7b6}
+.beemap{display:block;width:100%;height:auto;background:#f3ead2}
+.beemap .bee-pin use{cursor:pointer;transition:transform .18s ease;transform-box:fill-box;transform-origin:center}
+.beemap .bee-pin:hover use,.beemap .bee-pin:focus use{transform:translateY(-3px) scale(1.14)}
+.beemap .bee-pin{outline:none}
+.beemap .bee-pin:focus-visible use{filter:drop-shadow(0 0 3px #c0392b)}
+.beemap .bee-label{font-family:"Work Sans",sans-serif;font-size:16px;fill:#5a4636;font-weight:600;paint-order:stroke;stroke:#f3ead2;stroke-width:3px}
+.beemap .shop-label{font-family:"Fraunces",serif;font-size:17px;fill:#2E2118;font-weight:600;paint-order:stroke;stroke:#f3ead2;stroke-width:3.5px}
+.beemap .river-label{font-family:"Work Sans",sans-serif;font-size:14px;fill:#5a8b95;font-style:italic}
+.beemap .sea-label{font-family:"Work Sans",sans-serif;font-size:15px;fill:#5a8b95;font-style:italic;letter-spacing:.12em}
+.beemap .bee-shop use path{pointer-events:none}
+.map-legend{display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center;margin-top:.9rem;font-size:.9rem;color:#5a4a3a}
+.map-legend .lg-dot{display:inline-block;width:12px;height:13px;vertical-align:middle;margin-right:.35rem;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+.map-legend .lg-butine{background:#c4881e}
+.map-legend .lg-vente{background:#2E2118}
+.map-legend em{color:#8A5713;font-style:normal;font-weight:600}
+/* espace réduit promo -> carte */
+#promotion{padding-bottom:1rem}
+#promotion + #carte{padding-top:1.2rem}
+
+/* Carte Leaflet figée */
+#map{height:440px;border-radius:18px;box-shadow:0 12px 34px rgba(46,33,24,.18);border:1px solid #e4d7b6;cursor:default}
+#map .leaflet-interactive{cursor:pointer}
+.map-pop-link{color:#8A5713;font-weight:600;text-decoration:none}
+.map-pop-link:hover{text-decoration:underline}
+.pv-tip{background:#2E2118;color:#fff;border:0;font-weight:600}
+/* lien "voir sur la carte" dans les fiches miels */
+.see-on-map{display:inline-block;margin-top:.6rem;font-size:.86rem;color:#8A5713;text-decoration:none;font-weight:600}
+.see-on-map:hover{text-decoration:underline}
+.see-on-map span{font-size:1.05em}
+
+/* Ancrage de la section "Devenir partenaire" sous le header fixe */
+#devenir-partenaire{scroll-margin-top:96px}
+
+/* Galerie de bougies en fin d'article */
+.bougies-inline{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.6rem 0}
+.bougies-inline img{width:100%;height:150px;object-fit:contain;background:linear-gradient(180deg,#faf6ec,#f1e9d6);border-radius:12px;padding:.6rem}
+@media(max-width:560px){.bougies-inline{grid-template-columns:repeat(2,1fr)}}
+
+
+/* ===== Carrousel de bougies (petit, défilement JS, jamais empilé) ===== */
+.bougie-marquee{position:relative;overflow:hidden;margin:1.4rem 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.bougie-track{display:flex;flex-wrap:nowrap;gap:1rem;width:max-content;will-change:transform}
+.bougie-track figure{flex:0 0 auto;width:110px;margin:0;text-align:center}
+.bougie-track img{width:110px;height:110px;object-fit:contain;background:linear-gradient(180deg,#faf6ec,#f1e9d6);border-radius:14px;padding:.5rem;box-shadow:0 3px 10px rgba(46,33,24,.08)}
+.bougie-track figcaption{font-size:.78rem;color:#5a4a3a;margin-top:.35rem}
+@media(max-width:560px){.bougie-track figure,.bougie-track img{width:92px}.bougie-track img{height:92px}}
+
+/* Ligne copyright du pied de page */
+.site-footer .foot-copy{border-top:1px solid rgba(245,237,218,.15);margin-top:1.4rem;padding-top:1rem;font-size:.82rem;color:#a89a86}
+
+/* Crédit concepteur */
+.site-footer .foot-credit{display:inline-block;margin-top:.3rem;color:#8f8271;font-size:.8rem}
+
+/* Bouton contact du concepteur */
+.site-footer .foot-contact{display:inline-block;margin-left:.5rem;padding:.12rem .6rem;border:1px solid rgba(232,217,174,.4);border-radius:999px;color:#e8d9ae;text-decoration:none;font-size:.78rem;transition:background .2s ease,border-color .2s ease}
+.site-footer .foot-contact:hover{background:rgba(232,217,174,.14);border-color:rgba(232,217,174,.7)}

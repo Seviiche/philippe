@@ -1,5 +1,19 @@
 window.ARTICLES = [
   {
+    "slug": "deux-miels-au-meme-endroit",
+    "titre": "Deux miels au même endroit ? C'est la saison qui décide",
+    "date": "2026-07-12",
+    "image": "images/article-abeilles-decident.webp",
+    "extrait": "Une même zone peut donner plusieurs miels : les floraisons se succèdent au fil des mois, les ruches restent, et je récolte entre chaque floraison."
+  },
+  {
+    "slug": "les-bougies-en-cire-d-abeille",
+    "titre": "Nos bougies en cire d'abeille : la cire qui boucle la boucle",
+    "date": "2026-07-12",
+    "image": "images/article-bougies.webp",
+    "extrait": "La cire est un produit du corps de l'abeille — coûteux à fabriquer. Comment on recycle la vieille cire des cadres en bougies, sans rien gaspiller."
+  },
+  {
     "slug": "l-extraction-en-douceur",
     "titre": "L'extraction en douceur : pourquoi notre miel garde son goût",
     "date": "2026-07-12",

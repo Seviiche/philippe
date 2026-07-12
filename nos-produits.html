@@ -15,9 +15,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <link rel="canonical" href="https://philippe-thorent.fr/nos-produits.html">
 <meta property="og:url" content="https://philippe-thorent.fr/nos-produits.html">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -37,6 +37,7 @@
       <li><a href="le-producteur.html">Le producteur</a></li>
       <li><a href="nos-produits.html" class="active">Nos miels &amp; produits</a></li>
       <li><a href="le-carnet.html">Le carnet</a></li>
+      <li><a href="nos-partenaires.html">Nos partenaires</a></li>
       <li><a href="ou-nous-trouver.html">Où nous trouver</a></li>
       <li><a class="btn btn-primary btn-sm nav-cta" href="ou-nous-trouver.html#prevenez">Prévenez-moi</a></li>
     </ul></nav>
@@ -59,30 +60,31 @@
 </div></section>
 
 
-<section class="section"><div class="wrap">
+<section class="section" id="carte"><div class="wrap">
+  <div class="section-head" data-reveal><span class="eyebrow">La carte</span><h2>Où butinent mes abeilles</h2><p>Chaque miel vient d'un coin précis du Roussillon. Cliquez sur un point pour ouvrir le ou les miels qui y sont récoltés.</p></div>
   <div class="map-wrap" data-reveal>
-    <div id="map"></div>
+    <div id="map" aria-label="Carte des zones de butinage"></div>
     <div class="map-legend">
-      <span><span class="lg-dot lg-butine"></span> Zones de butinage</span>
-      <span><span class="lg-dot lg-vente"></span> Point de vente — la miellerie (Bouleternère)</span>
+      <span><span class="lg-dot lg-butine"></span> Zones de butinage <em>(cliquables)</em></span>
+      <span><span class="lg-dot lg-vente"></span> La miellerie — point de vente (Bouleternère)</span>
     </div>
   </div>
 </div></section>
 
 <section class="section section-alt"><div class="wrap">
   <div class="section-head" data-reveal><span class="eyebrow">La gamme</span><h2>Tous nos miels</h2></div>
-  <div class="miel-list"><div class="miel-row" id="miel-romarin" data-reveal><div class="mr-head"><h3>Romarin</h3><span class="chip chip-lieu">Corbières</span><span class="chip">mi-février → début mai</span></div><p>Butiné de mi-février à début mai, dans les garrigues où les seules végétations sont le romarin et le thym. Contrairement à la plante, à l'odeur très prononcée, le miel est d'une extraordinaire finesse et d'une saveur incomparable.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Fin, floral, d'une grande délicatesse</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-lavande" data-reveal><div class="mr-head"><h3>Lavande papillon</h3><span class="chip chip-lieu">Montalba-le-Château</span><span class="chip">mars → juin</span></div><p>La lavande stœchas, dite « lavande papillon » à cause des petites ailes en haut de sa corolle, pousse essentiellement dans les Pyrénées-Orientales. Cette plante fleurit de mars à juin et dégage une odeur de thym. Le miel en tire une saveur délicate et suave. Un miel recherché.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Suave, avec un bon parfum de garrigue</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-garrigues" data-reveal><div class="mr-head"><h3>Garrigues</h3><span class="chip chip-lieu">Boule d'Amont</span><span class="chip">printemps</span></div><p>Butiné sur les garrigues sèches et arides de Boule d'Amont, principalement sur la bruyère blanche, le ciste cotonneux et le chêne vert. Un goût rustique, sauvage, un peu caramel ou pain d'épices. Il cristallise naturellement en une structure crémeuse.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Rustique : caramel et pain d'épices</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-maquis" data-reveal><div class="mr-head"><h3>Maquis</h3><span class="chip chip-lieu">Serrabone</span><span class="chip">juin → juillet</span></div><p>Butiné sur l'orpin, la bruyère cendrée, le ciste argenté et le chêne vert, en juin-juillet dans le maquis catalan. La couleur foncée donnée par le chêne et le ciste ne reflète en rien un goût très fort : un parfum pain d'épices, anis étoilé et flore sauvage, idéal en pâtisserie.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Pain d'épices et anis étoilé</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-printemps" data-reveal><div class="mr-head"><h3>Printemps</h3><span class="chip chip-lieu">Séquerre</span><span class="chip">mai</span></div><p>Butiné en mai sur la lavande, le thym et le ciste. Contrairement à la couleur foncée que lui donne le ciste, ce miel a une saveur douce et délicate.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Doux et délicat</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-acacia" data-reveal><div class="mr-head"><h3>Acacia</h3><span class="chip chip-lieu">Escaro · Nyer</span><span class="chip">mai</span></div><p>Butiné en mai. Ce miel n'est pas au rendez-vous chaque année. Saveur douce ; il ne cristallise que très lentement.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Douceur florale, longue tenue liquide</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-chataignier" data-reveal><div class="mr-head"><h3>Châtaignier</h3><span class="chip chip-lieu">Boule d'Amont — gorges du Boulès</span><span class="chip">juin → juillet</span></div><p>Butiné en juin-juillet sur le châtaignier, dans les gorges du Boulès, entre Bouleternère et Amélie-les-Bains. Un miel mi-garrigue mi-montagne, qui a beaucoup de corps et de caractère, teinté d'une subtile amertume.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Boisé, corsé, subtilement amer</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-fleurs-sauvages" data-reveal><div class="mr-head"><h3>Fleurs sauvages</h3><span class="chip chip-lieu">Escaro · Nyer</span><span class="chip">été</span></div><p>On retrouve dans ce miel des fleurs d'acacia, de ronces, de framboisier et un peu de thym. C'est un miel liquide, onctueux, très parfumé.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Bouquet floral intense</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-fleurs-sauvages-montagne" data-reveal><div class="mr-head"><h3>Fleurs sauvages de montagne</h3><span class="chip chip-lieu">Vallée d'Eyne (1 800 m)</span><span class="chip">début août</span></div><p>Récolté début août dans la vallée d'Eyne, en face de Font-Romeu. Dans cette vallée totalement inculte poussent un bon millier de plantes sauvages (rhododendron, sapin) qui donnent au miel une saveur exquise et un parfum de haute montagne.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Parfum d'altitude, saveur exquise</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-rhododendron" data-reveal><div class="mr-head"><h3>Rhododendron</h3><span class="chip chip-lieu">Réserve naturelle de Py</span><span class="chip">juin → juillet</span></div><p>Butiné en juin-juillet sur le rhododendron, la réglisse sauvage et le sapin, dans la réserve naturelle de Py. Tout le charme des sous-bois. Un miel de grande finesse.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Sous-bois, grande finesse</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-callune" data-reveal><div class="mr-head"><h3>Callune</h3><span class="chip chip-lieu">Réserve naturelle de Py</span><span class="chip">fin septembre</span></div><p>Récolté fin septembre dans la réserve naturelle de Py, essentiellement sur la bruyère callune. Un miel rare à la saveur douce-amère et au caractère affirmé, très apprécié des connaisseurs — recherché jusqu'en Europe du Nord.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Douce-amère, caractère affirmé</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
-<div class="miel-row" id="miel-avocat" data-reveal><div class="mr-head"><h3>Miel d'avocat <span class="tag-new">Nouveau</span></h3><span class="chip chip-lieu">Vergers du Roussillon</span><span class="chip">printemps</span></div><p>Nos abeilles butinent aussi les vergers d'avocatiers cultivés par la famille, en Roussillon. Il en naît un miel rare : ambré foncé, rond, avec des notes maltées. Une production très locale et limitée. · <a href="https://avocatduroussillon.com" target="_blank" rel="noopener">les vergers ↗</a></p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : notes maltées, rondeur ambrée</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div></div>
+  <div class="miel-list"><div class="miel-row" id="miel-romarin" data-reveal><div class="mr-head"><h3>Romarin</h3><span class="chip chip-lieu">Corbières</span><span class="chip">mi-février → début mai</span></div><p>Butiné de mi-février à début mai, dans les garrigues où les seules végétations sont le romarin et le thym. Contrairement à la plante, à l'odeur très prononcée, le miel est d'une extraordinaire finesse et d'une saveur incomparable.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Fin, floral, d'une grande délicatesse</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-romarin">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-lavande" data-reveal><div class="mr-head"><h3>Lavande papillon</h3><span class="chip chip-lieu">Montalba-le-Château</span><span class="chip">mars → juin</span></div><p>La lavande stœchas, dite « lavande papillon » à cause des petites ailes en haut de sa corolle, pousse essentiellement dans les Pyrénées-Orientales. Cette plante fleurit de mars à juin et dégage une odeur de thym. Le miel en tire une saveur délicate et suave. Un miel recherché.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Suave, avec un bon parfum de garrigue</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-lavande">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-garrigues" data-reveal><div class="mr-head"><h3>Garrigues</h3><span class="chip chip-lieu">Boule d'Amont</span><span class="chip">printemps</span></div><p>Butiné sur les garrigues sèches et arides de Boule d'Amont, principalement sur la bruyère blanche, le ciste cotonneux et le chêne vert. Un goût rustique, sauvage, un peu caramel ou pain d'épices. Il cristallise naturellement en une structure crémeuse.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Rustique : caramel et pain d'épices</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-garrigues">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-maquis" data-reveal><div class="mr-head"><h3>Maquis</h3><span class="chip chip-lieu">Serrabone</span><span class="chip">juin → juillet</span></div><p>Butiné sur l'orpin, la bruyère cendrée, le ciste argenté et le chêne vert, en juin-juillet dans le maquis catalan. La couleur foncée donnée par le chêne et le ciste ne reflète en rien un goût très fort : un parfum pain d'épices, anis étoilé et flore sauvage, idéal en pâtisserie.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Pain d'épices et anis étoilé</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-maquis">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-printemps" data-reveal><div class="mr-head"><h3>Printemps</h3><span class="chip chip-lieu">Séquerre</span><span class="chip">mai</span></div><p>Butiné en mai sur la lavande, le thym et le ciste. Contrairement à la couleur foncée que lui donne le ciste, ce miel a une saveur douce et délicate.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Doux et délicat</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-printemps">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-acacia" data-reveal><div class="mr-head"><h3>Acacia</h3><span class="chip chip-lieu">Escaro · Nyer</span><span class="chip">mai</span></div><p>Butiné en mai. Ce miel n'est pas au rendez-vous chaque année. Saveur douce ; il ne cristallise que très lentement.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Douceur florale, longue tenue liquide</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-acacia">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-chataignier" data-reveal><div class="mr-head"><h3>Châtaignier</h3><span class="chip chip-lieu">Boule d'Amont — gorges du Boulès</span><span class="chip">juin → juillet</span></div><p>Butiné en juin-juillet sur le châtaignier, dans les gorges du Boulès, entre Bouleternère et Amélie-les-Bains. Un miel mi-garrigue mi-montagne, qui a beaucoup de corps et de caractère, teinté d'une subtile amertume.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Boisé, corsé, subtilement amer</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-chataignier">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-fleurs-sauvages" data-reveal><div class="mr-head"><h3>Fleurs sauvages</h3><span class="chip chip-lieu">Escaro · Nyer</span><span class="chip">été</span></div><p>On retrouve dans ce miel des fleurs d'acacia, de ronces, de framboisier et un peu de thym. C'est un miel liquide, onctueux, très parfumé.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Bouquet floral intense</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip price-promo"><span class="price-old">1 kg — 15 €</span> 1 kg — 10 €</span><span class="price-chip price-promo"><span class="pp-flag">Promo</span> 5 kg — 45 €</span></div><p class="promo-note">Promotion du moment sur le miel de fleurs sauvages — en quantité limitée.</p><a class="see-on-map" href="#carte" data-miel="miel-fleurs-sauvages">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-fleurs-sauvages-montagne" data-reveal><div class="mr-head"><h3>Fleurs sauvages de montagne</h3><span class="chip chip-lieu">Vallée d'Eyne (1 800 m)</span><span class="chip">début août</span></div><p>Récolté début août dans la vallée d'Eyne, en face de Font-Romeu. Dans cette vallée totalement inculte poussent un bon millier de plantes sauvages (rhododendron, sapin) qui donnent au miel une saveur exquise et un parfum de haute montagne.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Parfum d'altitude, saveur exquise</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-fleurs-sauvages-montagne">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-rhododendron" data-reveal><div class="mr-head"><h3>Rhododendron</h3><span class="chip chip-lieu">Réserve naturelle de Py</span><span class="chip">juin → juillet</span></div><p>Butiné en juin-juillet sur le rhododendron, la réglisse sauvage et le sapin, dans la réserve naturelle de Py. Tout le charme des sous-bois. Un miel de grande finesse.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Sous-bois, grande finesse</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-rhododendron">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-callune" data-reveal><div class="mr-head"><h3>Callune</h3><span class="chip chip-lieu">Réserve naturelle de Py</span><span class="chip">fin septembre</span></div><p>Récolté fin septembre dans la réserve naturelle de Py, essentiellement sur la bruyère callune. Un miel rare à la saveur douce-amère et au caractère affirmé, très apprécié des connaisseurs — recherché jusqu'en Europe du Nord.</p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : Douce-amère, caractère affirmé</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-callune">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
+<div class="miel-row" id="miel-avocat" data-reveal><div class="mr-head"><h3>Miel d'avocat <span class="tag-new">Nouveau</span></h3><span class="chip chip-lieu">Vergers du Roussillon</span><span class="chip">printemps</span></div><p>Nos abeilles butinent aussi les vergers d'avocatiers cultivés par la famille, en Roussillon. Il en naît un miel rare : ambré foncé, rond, avec des notes maltées. Une production très locale et limitée. · <a href="https://avocatduroussillon.com" target="_blank" rel="noopener">les vergers ↗</a></p><div class="price-chips"><span class="price-chip chip-parfum">Parfum : notes maltées, rondeur ambrée</span><span class="price-chip">250 g — 5 €</span><span class="price-chip">500 g — 8 €</span><span class="price-chip">1 kg — 15 €</span></div><a class="see-on-map" href="#carte" data-miel="miel-avocat">Voir sur la carte <span aria-hidden="true">⌖</span></a></div>
 </div>
   <p class="tbl-note" style="margin-top:1.4rem" data-reveal>Chaque miel est produit en quantité limitée, selon ce que les abeilles récoltent dans l'année. La disponibilité varie donc au fil de la saison. Miel en rayon également, selon récolte — demandez-nous.</p>
 </div></section>
@@ -90,10 +92,11 @@
 <section class="section" id="produits-ferme"><div class="wrap">
   <div class="section-head" data-reveal><span class="eyebrow">Les produits de la ferme</span><h2>Pas que du miel</h2><p>À côté des ruches, le verger et les oliviers donnent le reste de la saison. Tout vient de l'exploitation.</p></div>
   <div class="prods">
-    <article class="card" data-reveal><img class="ph ph-cut" src="images/jus-pomme.webp" alt="Jus de pomme de la ferme"><div class="body"><h3>Jus de pomme</h3><p>Des pommes du verger, pressées en pur jus sans sucre ajouté.</p><div class="price-chips"><span class="price-chip">1 L — 3 €</span><span class="price-chip">Carton 6 bout. — 18 €</span></div></div></article>
+    <article class="card" data-reveal><img class="ph ph-cut" src="images/jus-pomme.webp" alt="Jus de pomme de la ferme, clair ou foncé"><div class="body"><h3>Jus de pomme</h3><p>Des pommes du verger, pressées en pur jus sans sucre ajouté. Au choix, <strong>clair ou foncé</strong> — c'est la variété qui change, pas le prix.</p><div class="price-chips"><span class="price-chip">1 L — 3 €</span><span class="price-chip">Carton 6 bout. — 18 €</span></div></div></article>
+    <article class="card" data-reveal><img class="ph ph-cut" src="images/pommes.webp" alt="Pommes fraîches du verger, en sachet"><div class="body"><h3>Pommes</h3><p>Les pommes fraîches du verger, en saison, à croquer ou à cuisiner.</p><div class="price-chips"><span class="price-chip">Selon saison — demandez-nous</span></div></div></article>
     <article class="card" data-reveal><img class="ph ph-cut" src="images/huile-olive-duo.webp" alt="Huile d'olive vierge extra de l'exploitation"><div class="body"><h3>Huile d'olive vierge extra</h3><p>De nos oliviers, extraite au fil de la récolte d'automne.</p><div class="price-chips"><span class="price-chip">0,50 L — 10 €</span><span class="price-chip">0,75 L — 14 €</span><span class="price-chip">Cubi 1,5 L — 25 €</span><span class="price-chip">Cubi 5 L — 80 €</span></div></div></article>
     <article class="card" data-reveal><img class="ph ph-cut" src="images/vinaigre-cidre.webp" alt="Vinaigre de cidre artisanal"><div class="body"><h3>Vinaigre de cidre</h3><p>Issu des pommes du verger, vieilli lentement.</p><div class="price-chips"><span class="price-chip">0,25 L — 3 €</span><span class="price-chip">0,50 L — 4 €</span></div></div></article>
-    <article class="card" data-reveal><img class="ph ph-cut" src="images/amandes.webp" alt="Amandes du verger"><div class="body"><h3>Amandes</h3><p>Amandes du verger, récoltées à la fin de l'été.Décortiquées ou non.</p><div class="price-chips"><span class="price-chip">Le kg — à partir de 4,50 €</span></div></div></article>
+    <article class="card" data-reveal><img class="ph ph-cut" src="images/amandes.webp" alt="Amandes du verger, en coque ou décortiquées"><div class="body"><h3>Amandes</h3><p>Amandes du verger, récoltées à la fin de l'été. En coque ou décortiquées (l'amandon nu, prêt à déguster).</p><div class="price-chips"><span class="price-chip">À partir de 4,50 € le kg</span></div></div></article>
     <article class="card" data-reveal><img class="ph ph-cut" src="images/confiture-abricot.webp" alt="Confiture d'abricot artisanale"><div class="body"><h3>Confiture d'abricot</h3><p>Les abricots du Roussillon en pot, cuits simplement.</p><div class="price-chips"><span class="price-chip">Le pot — 3,50 €</span></div></div></article>
     <article class="card" data-reveal><img class="ph ph-cut" src="images/miel-rayon.webp" alt="Miel en rayon, brut de la ruche"><div class="body"><h3>Miel en rayon</h3><p>Le miel tel quel, dans sa cire, brut de la ruche. Selon récolte.</p><div class="price-chips"><span class="price-chip">Selon disponibilité</span></div></div></article>
   </div>
@@ -104,16 +107,10 @@
 
 <section class="section section-alt" id="bougies"><div class="wrap">
   <div class="section-head" data-reveal><span class="eyebrow">La cire aussi</span><h2>Bougies en cire d'abeille</h2>
-  <p>Nos bougies sont faites avec la cire de corps de ruche. Chaque année, des cadres de ruche sont renouvelés : c'est cette vieille cire, qui ne peut pas être remise dans le circuit, qu'un cirier travaille — et il nous refabrique les cadres. Rien ne se perd.</p></div>
-  <div class="bougies-grid" data-reveal>
-    <figure><img src="images/bougie-ourson.webp" alt="Bougie ourson en cire d'abeille" loading="lazy"><figcaption>Ourson</figcaption></figure>
-    <figure><img src="images/bougie-herisson.webp" alt="Bougie hérisson en cire d'abeille" loading="lazy"><figcaption>Hérisson</figcaption></figure>
-    <figure><img src="images/bougie-chouette.webp" alt="Bougie chouette en cire d'abeille" loading="lazy"><figcaption>Chouette</figcaption></figure>
-    <figure><img src="images/bougie-escargot.webp" alt="Bougie escargot en cire d'abeille" loading="lazy"><figcaption>Escargot</figcaption></figure>
-    <figure><img src="images/bougie-sapin.webp" alt="Bougie sapin en cire d'abeille" loading="lazy"><figcaption>Sapin</figcaption></figure>
-    <figure><img src="images/bougie-boule.webp" alt="Bougie boule décor forêt en cire d'abeille" loading="lazy"><figcaption>Boule décor</figcaption></figure>
-  </div>
-  <p class="tbl-note" data-reveal>Et bien d'autres modèles à la miellerie : chat, cochon, canard, grenouille, lutin, santon… au fil des moulages.</p>
+  <p>Nous faisons nos bougies avec la cire de corps de ruche. Chaque année, des cadres sont renouvelés : cette vieille cire, qui ne peut pas repartir dans le circuit du miel, nous la récupérons et la coulons en bougies. La cire propre, elle, part chez un cirier qui nous refait des cadres neufs. Rien ne se perd.</p></div>
+  <div class="bougie-marquee" aria-label="Nos modèles de bougies"><div class="bougie-track"><figure><img src="images/bougie-ourson.webp" alt="Bougie ourson en cire d'abeille" loading="lazy"><figcaption>Ourson</figcaption></figure><figure><img src="images/bougie-herisson.webp" alt="Bougie hérisson en cire d'abeille" loading="lazy"><figcaption>Hérisson</figcaption></figure><figure><img src="images/bougie-chouette.webp" alt="Bougie chouette en cire d'abeille" loading="lazy"><figcaption>Chouette</figcaption></figure><figure><img src="images/bougie-escargot.webp" alt="Bougie escargot en cire d'abeille" loading="lazy"><figcaption>Escargot</figcaption></figure><figure><img src="images/bougie-sapin.webp" alt="Bougie sapin en cire d'abeille" loading="lazy"><figcaption>Sapin</figcaption></figure><figure><img src="images/bougie-boule.webp" alt="Bougie boule décor en cire d'abeille" loading="lazy"><figcaption>Boule décor</figcaption></figure><figure><img src="images/bougie-chat.webp" alt="Bougie chat en cire d'abeille" loading="lazy"><figcaption>Chat</figcaption></figure><figure><img src="images/bougie-cochon.webp" alt="Bougie cochon en cire d'abeille" loading="lazy"><figcaption>Cochon</figcaption></figure><figure><img src="images/bougie-grenouille.webp" alt="Bougie grenouille en cire d'abeille" loading="lazy"><figcaption>Grenouille</figcaption></figure><figure><img src="images/bougie-canard.webp" alt="Bougie canard en cire d'abeille" loading="lazy"><figcaption>Canard</figcaption></figure><figure><img src="images/bougie-lutin.webp" alt="Bougie lutin en cire d'abeille" loading="lazy"><figcaption>Lutin</figcaption></figure><figure><img src="images/bougie-chien.webp" alt="Bougie chien en cire d'abeille" loading="lazy"><figcaption>Chien</figcaption></figure><figure><img src="images/bougie-bonhomme.webp" alt="Bougie bonhomme de neige en cire d'abeille" loading="lazy"><figcaption>Bonhomme de neige</figcaption></figure><figure><img src="images/bougie-santon.webp" alt="Bougie santon en cire d'abeille" loading="lazy"><figcaption>Santon</figcaption></figure><figure><img src="images/bougie-pilier.webp" alt="Bougie pilier épis de blé en cire d'abeille" loading="lazy"><figcaption>Pilier épis de blé</figcaption></figure><figure><img src="images/bougie-flocon.webp" alt="Bougie boule flocon en cire d'abeille" loading="lazy"><figcaption>Boule flocon</figcaption></figure><figure><img src="images/bougie-branches.webp" alt="Bougie boule branches en cire d'abeille" loading="lazy"><figcaption>Boule branches</figcaption></figure><figure><img src="images/bougie-ourson.webp" alt="Bougie ourson en cire d'abeille" loading="lazy"><figcaption>Ourson</figcaption></figure><figure><img src="images/bougie-herisson.webp" alt="Bougie hérisson en cire d'abeille" loading="lazy"><figcaption>Hérisson</figcaption></figure><figure><img src="images/bougie-chouette.webp" alt="Bougie chouette en cire d'abeille" loading="lazy"><figcaption>Chouette</figcaption></figure><figure><img src="images/bougie-escargot.webp" alt="Bougie escargot en cire d'abeille" loading="lazy"><figcaption>Escargot</figcaption></figure><figure><img src="images/bougie-sapin.webp" alt="Bougie sapin en cire d'abeille" loading="lazy"><figcaption>Sapin</figcaption></figure><figure><img src="images/bougie-boule.webp" alt="Bougie boule décor en cire d'abeille" loading="lazy"><figcaption>Boule décor</figcaption></figure><figure><img src="images/bougie-chat.webp" alt="Bougie chat en cire d'abeille" loading="lazy"><figcaption>Chat</figcaption></figure><figure><img src="images/bougie-cochon.webp" alt="Bougie cochon en cire d'abeille" loading="lazy"><figcaption>Cochon</figcaption></figure><figure><img src="images/bougie-grenouille.webp" alt="Bougie grenouille en cire d'abeille" loading="lazy"><figcaption>Grenouille</figcaption></figure><figure><img src="images/bougie-canard.webp" alt="Bougie canard en cire d'abeille" loading="lazy"><figcaption>Canard</figcaption></figure><figure><img src="images/bougie-lutin.webp" alt="Bougie lutin en cire d'abeille" loading="lazy"><figcaption>Lutin</figcaption></figure><figure><img src="images/bougie-chien.webp" alt="Bougie chien en cire d'abeille" loading="lazy"><figcaption>Chien</figcaption></figure><figure><img src="images/bougie-bonhomme.webp" alt="Bougie bonhomme de neige en cire d'abeille" loading="lazy"><figcaption>Bonhomme de neige</figcaption></figure><figure><img src="images/bougie-santon.webp" alt="Bougie santon en cire d'abeille" loading="lazy"><figcaption>Santon</figcaption></figure><figure><img src="images/bougie-pilier.webp" alt="Bougie pilier épis de blé en cire d'abeille" loading="lazy"><figcaption>Pilier épis de blé</figcaption></figure><figure><img src="images/bougie-flocon.webp" alt="Bougie boule flocon en cire d'abeille" loading="lazy"><figcaption>Boule flocon</figcaption></figure><figure><img src="images/bougie-branches.webp" alt="Bougie boule branches en cire d'abeille" loading="lazy"><figcaption>Boule branches</figcaption></figure></div></div>
+  <p class="tbl-note" data-reveal>D'autres modèles arrivent parfois, au fil des moulages — passez à la miellerie pour découvrir ceux du moment.</p>
+  <p data-reveal style="margin-top:.4rem"><a class="arrow-link" href="les-bougies-en-cire-d-abeille.html">Comment nous faisons nos bougies, et pourquoi la cire ne se perd jamais <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></p>
 </div></section>
 
 <section class="section" id="vivant"><div class="wrap">
@@ -141,25 +138,58 @@
   <div class="cta-actions"><a class="btn btn-primary" href="ou-nous-trouver.html#points-de-vente">Où nous trouver</a><a class="btn btn-ghost" href="ou-nous-trouver.html#prevenez">Prévenez-moi</a></div>
 </div></section>
 
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
   var el=document.getElementById('map'); if(!el||typeof L==='undefined') return;
-  var map=L.map('map',{scrollWheelZoom:false});
+  // Carte FIGÉE : aucune navigation possible
+  var map=L.map('map',{dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,touchZoom:false,zoomControl:false,tap:false,attributionControl:true});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap, &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
-  var zones=[{lieu:"Boule d'Amont — gorges du Boulès",lat:42.567,lon:2.643,miels:"Châtaignier · Garrigues"},{lieu:"Montalba-le-Château",lat:42.686,lon:2.615,miels:"Lavande papillon"},{lieu:"Corbières (nord du 66)",lat:42.82,lon:2.7,miels:"Romarin"},{lieu:"Serrabone — maquis catalan",lat:42.588,lon:2.575,miels:"Maquis"},{lieu:"Réserve naturelle de Py",lat:42.512,lon:2.36,miels:"Callune · Rhododendron"},{lieu:"Escaro & Nyer — Conflent",lat:42.545,lon:2.335,miels:"Fleurs sauvages · Acacia"},{lieu:"Séquerre",lat:42.634,lon:2.607,miels:"Printemps"},{lieu:"Vallée d'Eyne — Cerdagne (1800 m)",lat:42.459,lon:2.075,miels:"Fleurs sauvages de montagne"},{lieu:"Vergers du Roussillon (avocatiers)",lat:42.69,lon:2.79,miels:"Miel d'avocat"}];
-  var pts=[];
+  // zones : chaque zone porte un ou plusieurs miels (nom + ancre)
+  var zones=[
+    {lieu:"Corbières (nord du 66)",lat:42.82,lon:2.70,miels:[["Romarin","miel-romarin"]]},
+    {lieu:"Montalba-le-Château",lat:42.686,lon:2.615,miels:[["Lavande papillon","miel-lavande"]]},
+    {lieu:"Boule d'Amont — gorges du Boulès",lat:42.567,lon:2.643,miels:[["Châtaignier","miel-chataignier"],["Garrigues","miel-garrigues"]]},
+    {lieu:"Serrabone",lat:42.588,lon:2.575,miels:[["Maquis","miel-maquis"]]},
+    {lieu:"Séquerre",lat:42.634,lon:2.607,miels:[["Printemps","miel-printemps"]]},
+    {lieu:"Escaro & Nyer — Conflent",lat:42.545,lon:2.335,miels:[["Fleurs sauvages","miel-fleurs-sauvages"],["Acacia","miel-acacia"]]},
+    {lieu:"Réserve naturelle de Py",lat:42.512,lon:2.36,miels:[["Callune","miel-callune"],["Rhododendron","miel-rhododendron"]]},
+    {lieu:"Vallée d'Eyne — Cerdagne (1800 m)",lat:42.459,lon:2.075,miels:[["Fleurs sauvages de montagne","miel-fleurs-sauvages-montagne"]]},
+    {lieu:"Vergers du Roussillon (avocatiers)",lat:42.69,lon:2.79,miels:[["Miel d'avocat","miel-avocat"]]}
+  ];
+  var byMiel={}, pts=[];
+  function popupHtml(z){
+    var l='<b>'+z.lieu+'</b><br>'+z.miels.map(function(m){return '<a href="#'+m[1]+'" class="map-pop-link">'+m[0]+' →</a>';}).join('<br>');
+    return l;
+  }
   zones.forEach(function(z){
-    var mk=L.circleMarker([z.lat,z.lon],{radius:9,color:'#8A5713',weight:2,fillColor:'#C4881E',fillOpacity:.92}).addTo(map);
-    mk.bindTooltip('<b>'+z.miels+'</b><br>'+z.lieu,{direction:'top'});
-    mk.bindPopup('<b>'+z.lieu+'</b><br>'+z.miels);
+    var mk=L.circleMarker([z.lat,z.lon],{radius:9,color:'#8A5713',weight:2,fillColor:'#C4881E',fillOpacity:.95}).addTo(map);
+    mk.bindTooltip(z.miels.map(function(m){return m[0];}).join(' · '),{direction:'top'});
+    mk.bindPopup(popupHtml(z));
+    // clic sur un point : si un seul miel -> va directement au détail ; sinon ouvre le popup avec les liens
+    mk.on('click',function(){
+      if(z.miels.length===1){ location.hash='#'+z.miels[0][1]; }
+      else { mk.openPopup(); }
+    });
+    z.miels.forEach(function(m){ byMiel[m[1]]=mk; });
     pts.push([z.lat,z.lon]);
   });
-  var pv=L.circleMarker([42.6603,2.6239],{radius:12,color:'#C4881E',weight:4,fillColor:'#2E2118',fillOpacity:1}).addTo(map);
-  pv.bindTooltip('Point de vente — la miellerie',{permanent:true,direction:'right',offset:[10,0],className:'pv-tip'});
+  var pv=L.circleMarker([42.65278,2.60725],{radius:12,color:'#C4881E',weight:4,fillColor:'#2E2118',fillOpacity:1}).addTo(map);
+  pv.bindTooltip('La miellerie — point de vente',{direction:'top',className:'pv-tip'});
   pv.bindPopup('<b>La miellerie — point de vente</b><br>Route de Corbère, 66130 Bouleternère');
-  pts.push([42.6603,2.6239]);
-  map.fitBounds(pts,{padding:[35,35]});
+  pts.push([42.65278,2.60725]);
+  map.fitBounds(pts,{paddingTopLeft:[22,46],paddingBottomRight:[22,24]});
+  function lock(){ map.invalidateSize(); map.fitBounds(pts,{paddingTopLeft:[22,46],paddingBottomRight:[22,24]}); map.setMaxBounds(map.getBounds()); }
+  setTimeout(lock,300); window.addEventListener('load',lock);
+
+  // Depuis la liste des miels : "Voir sur la carte"
+  document.querySelectorAll('.see-on-map').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('data-miel'), mk=byMiel[id];
+      if(mk){ setTimeout(function(){ mk.openPopup(); },350); }
+    });
+  });
 })();
 </script>
 <script>
@@ -173,7 +203,7 @@
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches, els=document.querySelectorAll('[data-reveal]');
   els.forEach(function(el){
     var p=el.parentNode, sibs=[]; if(p){sibs=Array.prototype.filter.call(p.children,function(c){return c.nodeType===1&&c.hasAttribute('data-reveal');});}
-    var i=sibs.indexOf(el); if(i>0) el.style.setProperty('--d',(Math.min(i,6)*0.07).toFixed(2)+'s');
+    var i=sibs.indexOf(el); if(i>0) el.style.setProperty('--d',(Math.min(i,4)*0.03).toFixed(2)+'s');
   });
   document.querySelectorAll('.hv-bar').forEach(function(b,i){b.style.setProperty('--d',(Math.min(i,14)*0.05).toFixed(2)+'s');});
   if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
@@ -222,7 +252,7 @@
 <div class="partners-band" aria-label="Nos partenaires">
   <div class="pb-inner">
     <div class="pb-scroll"><div class="pb-track"><a href="nos-partenaires.html"><span class="hexdot"></span>Papilles — Les Angles</a><a href="nos-partenaires.html"><span class="hexdot"></span>Épicerie de La Llagonne</a><a href="nos-partenaires.html"><span class="hexdot"></span>Les 5 Fruits &amp; Légumes — Le Soler</a><a href="nos-partenaires.html"><span class="hexdot"></span>Chez Marie — Pézilla-la-Rivière</a><a href="nos-partenaires.html"><span class="hexdot"></span>La Ferme des Lloses — Font-Romeu</a><a href="nos-partenaires.html"><span class="hexdot"></span>Mas Tramontane — St-Michel-de-Llotes</a><a href="nos-partenaires.html"><span class="hexdot"></span>Aux Saveurs de Marie — Le Soler</a><a href="nos-partenaires.html"><span class="hexdot"></span>Stand Barboteu — rond-point de Boule</a><a href="nos-partenaires.html"><span class="hexdot"></span>Papilles — Les Angles</a><a href="nos-partenaires.html"><span class="hexdot"></span>Épicerie de La Llagonne</a><a href="nos-partenaires.html"><span class="hexdot"></span>Les 5 Fruits &amp; Légumes — Le Soler</a><a href="nos-partenaires.html"><span class="hexdot"></span>Chez Marie — Pézilla-la-Rivière</a><a href="nos-partenaires.html"><span class="hexdot"></span>La Ferme des Lloses — Font-Romeu</a><a href="nos-partenaires.html"><span class="hexdot"></span>Mas Tramontane — St-Michel-de-Llotes</a><a href="nos-partenaires.html"><span class="hexdot"></span>Aux Saveurs de Marie — Le Soler</a><a href="nos-partenaires.html"><span class="hexdot"></span>Stand Barboteu — rond-point de Boule</a></div></div>
-    <a class="btn btn-primary btn-sm" href="ou-nous-trouver.html#prevenez" style="flex:0 0 auto">Devenir partenaire</a>
+    <a class="btn btn-primary btn-sm" href="nos-partenaires.html#devenir-partenaire" style="flex:0 0 auto">Devenir partenaire</a>
   </div>
 </div>
 <footer class="site-footer"><div class="wrap foot-grid">
@@ -235,9 +265,10 @@
     <p><a href="ou-nous-trouver.html">Où nous trouver</a></p></div>
   <div><h4>Autour de nous</h4>
     <p><a href="nos-partenaires.html">Nos partenaires</a></p>
-    <p><a href="ou-nous-trouver.html#prevenez">Devenir partenaire</a></p>
+    <p><a href="nos-partenaires.html#devenir-partenaire">Devenir partenaire</a></p>
     <p><a href="mentions-legales.html">Mentions légales</a></p></div>
-</div></footer>
+</div>
+<div class="wrap foot-copy">© 2026 Miels Thorent — Philippe Thorent, apiculteur à Bouleternère (66). Tous droits réservés.<br><span class="foot-credit">Site conçu et développé par Sébastien Thorent.</span></div></footer>
 
 <!-- Promotion du moment (fermable) — visible par défaut, cachée seulement si déjà fermée -->
 <aside class="promo-pop" id="promo-pop" role="complementary" aria-label="Promotion du moment">
@@ -255,6 +286,24 @@
 (function(){function go(){var h=location.hash;if(!h||h.length<2)return;var el;try{el=document.querySelector(h);}catch(e){return;}if(!el)return;document.querySelectorAll('[data-reveal]').forEach(function(x){x.classList.add('in');});el.scrollIntoView();}
 if(location.hash){window.addEventListener('load',function(){setTimeout(go,60);});}
 window.addEventListener('hashchange',go);})();
+</script>
+<script>
+/* Défilement discret du carrousel de bougies (indépendant de prefers-reduced-motion, non empilé) */
+(function(){
+  document.querySelectorAll('.bougie-marquee .bougie-track').forEach(function(track){
+    var x=0, speed=0.35, paused=false, half=0;
+    function measure(){ half=track.scrollWidth/2; }
+    measure(); window.addEventListener('load',measure); window.addEventListener('resize',measure);
+    var wrap=track.parentNode;
+    wrap.addEventListener('mouseenter',function(){paused=true;});
+    wrap.addEventListener('mouseleave',function(){paused=false;});
+    function step(){
+      if(!paused && half>0){ x-=speed; if(-x>=half){ x+=half; } track.style.transform='translateX('+x+'px)'; }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+})();
 </script>
 </body>
 </html>

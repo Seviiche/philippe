@@ -45,3 +45,12 @@ Format conseillé : **1200 × 675 px minimum (16:9)**. Enregistre chaque image d
 - **Midjourney** : ajoute `--ar 16:9 --style raw` en fin de prompt.
 - **Flux / Ideogram / Firefly** : les prompts ci-dessus fonctionnent tels quels ; précise « photo » si l'outil propose un mode.
 - Les abeilles générées par IA ont souvent des erreurs (trop de pattes, ailes doubles) : vérifie surtout les images 1-3 en zoomant.
+
+---
+
+## Produit « Pommes » (page produits) — terroir authentique, Bouleternère
+**Fichier : `pommes-verger.webp`** (à déposer dans `site-v3/images/`)
+
+> Photographie réaliste et authentique, style terroir : une cagette en bois usée débordant de pommes fraîchement cueillies, posée au pied d'un pommier dans un verger du Roussillon près de Bouleternère (Pyrénées-Orientales). Quelques pommes encore accrochées aux branches au premier plan, gouttes de rosée, feuilles vertes. En arrière-plan flou, la silhouette du massif du Canigó sous une lumière dorée de fin de journée. Ambiance ferme familiale, rien de publicitaire, couleurs naturelles chaudes, terre et herbe visibles. Sans texte, sans logo, format paysage 4:3, rendu photographique haute définition.
+
+Réglages : Midjourney `--ar 4:3 --style raw` ; Flux/Firefly tel quel. Une fois générée, dépose-la et dis-moi : je remplacerai la photo provisoire de la carte « Pommes » (qui réutilise pour l'instant celle du jus).
