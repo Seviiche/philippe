@@ -149,25 +149,7 @@
 <section class="section prevenez" id="prevenez"><div class="wrap" data-reveal>
   <span class="eyebrow">Restez informé</span><h2>Prévenez-moi par mail</h2>
   <p>Recevez un message quand un nouveau miel est récolté, quand le jus de pomme arrive, ou qu'un produit de saison revient.</p>
-  <!-- ============================================================
-       NEWSLETTER — via FormSubmit.co (gratuit, sans compte).
-       Les inscriptions arrivent par e-mail à philippethorent@orange.fr.
-       IMPORTANT : à la 1re inscription, un e-mail de confirmation FormSubmit
-       arrive dans cette boîte — cliquer le lien une seule fois pour activer.
-       ============================================================ -->
-  <form class="nl-form" id="nl-form" action="https://formsubmit.co/philippethorent@orange.fr" method="POST" data-endpoint="https://formsubmit.co/ajax/philippethorent@orange.fr" novalidate>
-    <input class="field" type="text" name="prenom" placeholder="Votre prénom" aria-label="Votre prénom" autocomplete="given-name" required>
-    <input class="field" type="email" name="email" placeholder="Votre e-mail" aria-label="Votre e-mail" autocomplete="email" required>
-    <button class="btn btn-primary" type="submit">Me prévenir</button>
-    <!-- anti-spam (piège invisible) -->
-    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
-    <!-- objet du mail reçu -->
-    <input type="hidden" name="_subject" value="Nouvelle inscription — Prévenez-moi (site Miels Thorent)">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-  </form>
-  <label class="nl-consent"><input type="checkbox" id="nl-consent" required> J'accepte de recevoir des nouvelles de la miellerie par e-mail. Désinscription possible à tout moment.</label>
-  <p class="nl-status" id="nl-status" role="status" aria-live="polite" hidden></p>
+  <p style="margin-top:1.4rem"><a class="btn btn-primary" href="https://forms.gle/WgKBoj1hPKhN2dde6" target="_blank" rel="noopener">S'inscrire à la newsletter <span aria-hidden="true">↗</span></a></p>
   <p class="nl-alt">Ou appelez directement le <a href="tel:+33614522800">06 14 52 28 00</a>, ou écrivez à <a href="mailto:philippethorent@orange.fr">philippethorent@orange.fr</a>.</p>
 </div></section>
 <script src="articles.js"></script>
@@ -268,30 +250,6 @@
 (function(){function go(){var h=location.hash;if(!h||h.length<2)return;var el;try{el=document.querySelector(h);}catch(e){return;}if(!el)return;document.querySelectorAll('[data-reveal]').forEach(function(x){x.classList.add('in');});el.scrollIntoView();}
 if(location.hash){window.addEventListener('load',function(){setTimeout(go,60);});}
 window.addEventListener('hashchange',go);})();
-</script>
-<script>
-/* Newsletter : envoi en AJAX vers Formspree, sans quitter la page */
-(function(){
-  var f=document.getElementById('nl-form'); if(!f) return;
-  var status=document.getElementById('nl-status');
-  var consent=document.getElementById('nl-consent');
-  function show(msg,ok){ if(!status)return; status.hidden=false; status.textContent=msg; status.className='nl-status '+(ok?'nl-ok':'nl-err'); }
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var endpoint=f.getAttribute('data-endpoint')||f.action;
-    if(consent && !consent.checked){ show("Merci de cocher la case de consentement.",false); return; }
-    var email=f.querySelector('input[name=email]'); 
-    if(!email.value || email.value.indexOf('@')===-1){ show("Merci d'indiquer un e-mail valide.",false); return; }
-    var btn=f.querySelector('button[type=submit]'); var old=btn.textContent; btn.disabled=true; btn.textContent='Envoi…';
-    fetch(endpoint,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-      .then(function(r){
-        if(r.ok){ f.reset(); if(consent)consent.checked=false; show("Merci ! Votre inscription est bien enregistrée. À bientôt.",true); }
-        else { r.json().then(function(d){ show((d && d.errors && d.errors[0] && d.errors[0].message) || "Une erreur est survenue, réessayez ou appelez-nous.",false); }).catch(function(){ show("Une erreur est survenue, réessayez ou appelez-nous.",false); }); }
-      })
-      .catch(function(){ show("Pas de connexion : réessayez, ou écrivez-nous directement.",false); })
-      .finally(function(){ btn.disabled=false; btn.textContent=old; });
-  });
-})();
 </script>
 </body>
 </html>
