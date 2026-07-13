@@ -114,7 +114,7 @@
 
   // Prochain jour d'ouverture (hero). Horaires à garder synchro avec la page "Où nous trouver".
   (function(){
-    var el=document.getElementById('open-badge'); if(!el) return;
+    var badges=document.querySelectorAll('.open-badge'); if(!badges.length) return;
     var H={1:[[8,12],[14,18]],2:[[8,12],[14,18]],3:[[8,12],[14,18]],4:[],5:[[8,12],[14,18]],6:[[8,12]],0:[]};
     var jours=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
     var mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
@@ -124,12 +124,15 @@
     (H[now.getDay()]||[]).forEach(function(c){if(c[0]<=nowH&&nowH<c[1])openNow=true;});
     var chosen=null, off=null;
     for(var i=0;i<8;i++){var d=new Date(now);d.setDate(now.getDate()+i);var cr=H[d.getDay()];if(!cr||!cr.length)continue;if(i===0&&!cr.some(function(c){return c[1]>nowH;}))continue;chosen={date:d,cr:cr};off=i;break;}
-    if(!chosen){el.style.display='none';return;}
-    var wd=chosen.date.getDay(), dt;
-    if(off===0)dt='Aujourd’hui'; else if(off===1)dt='Demain ('+jours[wd]+')'; else dt=cap(jours[wd])+' '+chosen.date.getDate()+' '+mois[chosen.date.getMonth()];
-    var lab=document.getElementById('open-label'), info=document.getElementById('open-info');
-    if(lab)lab.textContent=openNow?'Ouvert maintenant':'Prochaine ouverture';
-    if(info)info.innerHTML='<b>'+dt+' · '+fmt(chosen.cr)+'</b>, à la miellerie';
+    var wd=chosen?chosen.date.getDay():0, dt='';
+    if(chosen){ if(off===0)dt='Aujourd’hui'; else if(off===1)dt='Demain ('+jours[wd]+')'; else dt=cap(jours[wd])+' '+chosen.date.getDate()+' '+mois[chosen.date.getMonth()]; }
+    badges.forEach(function(el){
+      if(!chosen){ el.style.display='none'; return; }
+      var lab=el.querySelector('.open-label'), info=el.querySelector('.open-info');
+      if(lab)lab.textContent=openNow?'Ouvert maintenant':'Prochaine ouverture';
+      if(info)info.innerHTML='<b>'+dt+' · '+fmt(chosen.cr)+'</b>, à la miellerie';
+      el.classList.toggle('is-open',openNow);
+    });
   })();
 
   // Articles : 3 derniers sur l'accueil (#home-articles), tous sur la page carnet (#all-articles).

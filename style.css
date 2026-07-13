@@ -652,3 +652,25 @@ html,body{overflow-x:clip}
   .pb-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
   .pb-track{animation:none;flex-wrap:nowrap;white-space:nowrap}
 }
+
+/* Newsletter : consentement + messages d'état */
+.nl-consent{display:flex;align-items:flex-start;gap:.55rem;margin-top:.9rem;font-size:.86rem;color:#c9b795;max-width:560px;cursor:pointer;line-height:1.4}
+.nl-consent input{margin-top:.15rem;width:18px;height:18px;flex:0 0 auto;accent-color:var(--honey)}
+.nl-status{margin-top:.9rem;font-weight:600;font-size:.95rem;border-radius:10px;padding:.7rem .95rem;max-width:560px}
+.nl-status.nl-ok{background:rgba(110,122,75,.18);color:#dce7c2;border:1px solid rgba(140,160,90,.5)}
+.nl-status.nl-err{background:rgba(192,57,43,.16);color:#f4c9c2;border:1px solid rgba(192,57,43,.5)}
+
+/* =========================================================
+   Module "Prochaine ouverture / Ouvert maintenant" (cliquable, réutilisable)
+   ========================================================= */
+.next-sale.open-badge{text-decoration:none;color:inherit;cursor:pointer;transition:transform .18s ease,box-shadow .22s ease,border-color .22s ease}
+.next-sale.open-badge:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(46,33,24,.18);border-color:var(--honey)}
+.next-sale.open-badge::after{content:"›";margin-left:.35rem;color:var(--honey-deep);font-weight:700;font-size:1.15rem;line-height:1;transition:transform .2s ease}
+.next-sale.open-badge:hover::after{transform:translateX(3px)}
+.next-sale.open-badge.is-open .dot{background:#3fa34d;box-shadow:0 0 0 4px rgba(63,163,77,.22)}
+/* dans les colonnes "où nous trouver" : marges adaptées */
+.pv .open-badge{margin:.2rem 0 1.1rem;width:fit-content}
+
+/* Grande carte pleine largeur (page Où nous trouver) */
+.map-big{margin-top:clamp(1.6rem,4vw,2.6rem);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.map-big iframe{display:block;width:100%;height:clamp(380px,62vh,600px);border:0}
