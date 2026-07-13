@@ -84,10 +84,23 @@
     var mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
     function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
     function fmt(cr){return cr.map(function(c){return c[0]+' h–'+c[1]+' h';}).join(' · ');}
-    var now=new Date(), nowH=now.getHours()+now.getMinutes()/60, openNow=false;
-    (H[now.getDay()]||[]).forEach(function(c){if(c[0]<=nowH&&nowH<c[1])openNow=true;});
+    function pad(n){return (n<10?'0':'')+n;}
+    function key(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());}
+    function easter(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da);}
+    function feries(y){var s={},add=function(d){s[key(d)]=1;},E=easter(y);
+      add(new Date(y,0,1));add(new Date(y,4,1));add(new Date(y,4,8));add(new Date(y,6,14));add(new Date(y,7,15));add(new Date(y,10,1));add(new Date(y,10,11));add(new Date(y,11,25));
+      var lp=new Date(E);lp.setDate(E.getDate()+1);add(lp);
+      var asc=new Date(E);asc.setDate(E.getDate()+39);add(asc);
+      var pen=new Date(E);pen.setDate(E.getDate()+50);add(pen);
+      return s;}
+    var now=new Date();
+    var FER={}, fa=feries(now.getFullYear()), fb=feries(now.getFullYear()+1), z;
+    for(z in fa)FER[z]=1; for(z in fb)FER[z]=1;
+    function isFerie(d){return !!FER[key(d)];}
+    var nowH=now.getHours()+now.getMinutes()/60, openNow=false;
+    if(!isFerie(now)){(H[now.getDay()]||[]).forEach(function(c){if(c[0]<=nowH&&nowH<c[1])openNow=true;});}
     var chosen=null, off=null;
-    for(var i=0;i<8;i++){var d=new Date(now);d.setDate(now.getDate()+i);var cr=H[d.getDay()];if(!cr||!cr.length)continue;if(i===0&&!cr.some(function(c){return c[1]>nowH;}))continue;chosen={date:d,cr:cr};off=i;break;}
+    for(var i=0;i<10;i++){var d=new Date(now);d.setDate(now.getDate()+i);var cr=H[d.getDay()];if(!cr||!cr.length)continue;if(isFerie(d))continue;if(i===0&&!cr.some(function(c){return c[1]>nowH;}))continue;chosen={date:d,cr:cr};off=i;break;}
     var wd=chosen?chosen.date.getDay():0, dt='';
     if(chosen){ if(off===0)dt='Aujourd’hui'; else if(off===1)dt='Demain ('+jours[wd]+')'; else dt=cap(jours[wd])+' '+chosen.date.getDate()+' '+mois[chosen.date.getMonth()]; }
     badges.forEach(function(el){

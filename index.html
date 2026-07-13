@@ -141,7 +141,7 @@
   <div class="section-head" data-reveal><span class="eyebrow">Où nous trouver</span><h2>À la miellerie, à Bouleternère</h2><p>Vente directe sur place, pendant les horaires d'ouverture.</p></div>
   <div class="pv">
     <div data-reveal><a class="next-sale open-badge" href="ou-nous-trouver.html#points-de-vente" aria-label="Voir les horaires et l'accès"><span class="dot" aria-hidden="true"></span><span class="ns-txt"><span class="ns-lbl open-label">Prochaine ouverture</span> <span class="open-info"><b>pendant nos horaires d’ouverture</b></span></span></a><p class="addr" style="margin-top:1.1rem">Route de Corbère<br>Lieu-dit « Foun Del Boulès »<br>66130 Bouleternère<br><a class="tel" href="tel:+33614522800">06 14 52 28 00</a><br><a href="mailto:philippethorent@orange.fr">philippethorent@orange.fr</a></p><div class="route-btns"><a class="btn btn-primary btn-sm" href="https://waze.com/ul/hsp9fekdw3" target="_blank" rel="noopener">Waze</a><a class="btn btn-ghost btn-sm" href="https://maps.app.goo.gl/rDdP45UQVAYgoa1o9" target="_blank" rel="noopener">Google Maps</a><a class="btn btn-ghost btn-sm" href="https://maps.apple/p/rKcyg~qfis9HYB" target="_blank" rel="noopener">Plans</a></div><table class="hours"><caption>Horaires</caption><tbody>
-<tr><th>Lundi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Mardi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Mercredi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Jeudi</th><td class="closed">Fermé</td></tr><tr><th>Vendredi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Samedi</th><td>8 h–12 h</td></tr><tr><th>Dimanche</th><td class="closed">Fermé</td></tr>
+<tr><th>Lundi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Mardi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Mercredi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Jeudi</th><td class="closed">Fermé</td></tr><tr><th>Vendredi</th><td>8 h–12 h · 14 h–18 h</td></tr><tr><th>Samedi</th><td>8 h–12 h</td></tr><tr><th>Dimanche &amp; jours fériés</th><td class="closed">Fermé</td></tr>
 </tbody></table></div>
     <div class="map-embed" data-reveal><iframe title="Carte — la miellerie à Bouleternère (66130)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d783.2720076445986!2d2.6066032696484878!3d42.65278499819794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDM5JzEwLjAiTiAywrAzNicyNi4xIkU!5e1!3m2!1sfr!2sfr!4v1783881936819!5m2!1sfr!2sfr"></iframe></div>
   </div>
@@ -181,10 +181,23 @@
     var mois=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
     function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
     function fmt(cr){return cr.map(function(c){return c[0]+' h–'+c[1]+' h';}).join(' · ');}
-    var now=new Date(), nowH=now.getHours()+now.getMinutes()/60, openNow=false;
-    (H[now.getDay()]||[]).forEach(function(c){if(c[0]<=nowH&&nowH<c[1])openNow=true;});
+    function pad(n){return (n<10?'0':'')+n;}
+    function key(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());}
+    function easter(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da);}
+    function feries(y){var s={},add=function(d){s[key(d)]=1;},E=easter(y);
+      add(new Date(y,0,1));add(new Date(y,4,1));add(new Date(y,4,8));add(new Date(y,6,14));add(new Date(y,7,15));add(new Date(y,10,1));add(new Date(y,10,11));add(new Date(y,11,25));
+      var lp=new Date(E);lp.setDate(E.getDate()+1);add(lp);
+      var asc=new Date(E);asc.setDate(E.getDate()+39);add(asc);
+      var pen=new Date(E);pen.setDate(E.getDate()+50);add(pen);
+      return s;}
+    var now=new Date();
+    var FER={}, fa=feries(now.getFullYear()), fb=feries(now.getFullYear()+1), z;
+    for(z in fa)FER[z]=1; for(z in fb)FER[z]=1;
+    function isFerie(d){return !!FER[key(d)];}
+    var nowH=now.getHours()+now.getMinutes()/60, openNow=false;
+    if(!isFerie(now)){(H[now.getDay()]||[]).forEach(function(c){if(c[0]<=nowH&&nowH<c[1])openNow=true;});}
     var chosen=null, off=null;
-    for(var i=0;i<8;i++){var d=new Date(now);d.setDate(now.getDate()+i);var cr=H[d.getDay()];if(!cr||!cr.length)continue;if(i===0&&!cr.some(function(c){return c[1]>nowH;}))continue;chosen={date:d,cr:cr};off=i;break;}
+    for(var i=0;i<10;i++){var d=new Date(now);d.setDate(now.getDate()+i);var cr=H[d.getDay()];if(!cr||!cr.length)continue;if(isFerie(d))continue;if(i===0&&!cr.some(function(c){return c[1]>nowH;}))continue;chosen={date:d,cr:cr};off=i;break;}
     var wd=chosen?chosen.date.getDay():0, dt='';
     if(chosen){ if(off===0)dt='Aujourd’hui'; else if(off===1)dt='Demain ('+jours[wd]+')'; else dt=cap(jours[wd])+' '+chosen.date.getDate()+' '+mois[chosen.date.getMonth()]; }
     badges.forEach(function(el){
