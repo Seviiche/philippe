@@ -165,7 +165,7 @@ a:hover{color:var(--honey)}
 @media (max-width:1024px){
   .nav-toggle{display:inline-flex}
   #primary-nav{position:absolute;left:0;right:0;top:70px;background:var(--wax);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease}
-  #primary-nav.open{max-height:60vh}
+  #primary-nav.open{max-height:min(78vh,560px);overflow-y:auto;-webkit-overflow-scrolling:touch}
   #primary-nav ul{flex-direction:column;gap:0;padding:.4rem 0}
   #primary-nav li{padding:0}
   #primary-nav a{display:block;padding:.85rem clamp(1.1rem,4vw,2.4rem)}
@@ -580,3 +580,75 @@ section[id],[id].prevenez,#prevenez,#points-de-vente,#promotion,#produits-ferme,
 /* Bouton contact du concepteur */
 .site-footer .foot-contact{display:inline-block;margin-left:.5rem;padding:.12rem .6rem;border:1px solid rgba(232,217,174,.4);border-radius:999px;color:#e8d9ae;text-decoration:none;font-size:.78rem;transition:background .2s ease,border-color .2s ease}
 .site-footer .foot-contact:hover{background:rgba(232,217,174,.14);border-color:rgba(232,217,174,.7)}
+
+/* =========================================================
+   ERGONOMIE & OPTIMISATION MOBILE / TABLETTE (v4)
+   ========================================================= */
+
+/* Confort tactile global */
+a,button,summary,.btn,input[type="submit"]{-webkit-tap-highlight-color:rgba(196,136,30,.18)}
+@media (hover:none){
+  a:hover,.btn:hover{transform:none}          /* pas d'effet "survol" collant au doigt */
+}
+.btn:active{transform:translateY(1px) scale(.99)}   /* retour tactile */
+
+/* Cibles tactiles ≥ 44px (recommandation Apple/Google) */
+.btn{min-height:44px}
+.btn-sm{min-height:40px}
+.nav-toggle{min-width:44px;min-height:44px;display:none;align-items:center;justify-content:center}
+.promo-pop .pp-close{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;top:4px;right:6px}
+.see-on-map{padding:.35rem 0;min-height:36px}
+.faq summary{min-height:52px}
+
+/* Formulaires : 16px pour empêcher le zoom auto d'iOS au focus */
+.nl-form .field{font-size:16px}
+input,select,textarea{font-size:16px}
+
+/* Anti-débordement horizontal (sécurité) */
+html,body{overflow-x:clip}
+.wrap{width:100%}
+
+/* Tablette (≤ 1024px) : la nav bascule déjà en menu ; on garde le CTA visible et confortable */
+@media (max-width:1024px){
+  .nav-toggle{display:inline-flex}
+  #primary-nav .nav-cta{margin:.4rem clamp(1.1rem,4vw,2.4rem);display:inline-flex;width:auto}
+}
+
+/* Petits écrans (≤ 600px) */
+@media (max-width:600px){
+  /* Boutons principaux pleine largeur = plus faciles à viser */
+  .cta-row .btn,.cta-actions .btn,.nl-form button,.avis-cta .btn{width:100%;justify-content:center}
+  .nl-form .field{flex:1 1 100%}
+  .route-btns .btn{flex:1 1 calc(50% - .3rem);justify-content:center}
+  /* Carte un peu moins haute */
+  #map{height:360px}
+  /* Bloc "produit vivant" : image pleine largeur */
+  .vivant{flex-direction:column;align-items:flex-start}
+  .vivant img{width:100%;max-width:none;height:auto}
+  /* Bandeau promo : image centrée au-dessus du texte */
+  .promo-band{justify-content:center;text-align:center}
+  .promo-band img{width:110px}
+  /* Pop-up promo plus compacte, limitée en hauteur */
+  .promo-pop{max-height:70vh;overflow:auto;font-size:.92rem}
+}
+
+/* Très petits écrans (≤ 400px) : alléger l'en-tête */
+@media (max-width:400px){
+  .brand .btag{display:none}                 /* on garde le nom, on masque le sous-titre */
+  .brand img{width:38px;height:38px}
+  .nav-inner{height:62px}
+  #primary-nav{top:62px}
+  .hero-chips li{font-size:.8rem;padding:.28rem .6rem}
+}
+
+/* Le pied de page reste lisible sur mobile */
+@media (max-width:560px){
+  .site-footer .foot-grid{gap:1.3rem}
+  .site-footer .foot-copy{font-size:.8rem}
+}
+
+/* Partenaires : sous "réduire les animations", noms lisibles et centrés (pas empilés serrés) */
+@media (prefers-reduced-motion:reduce){
+  .pb-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .pb-track{animation:none;flex-wrap:nowrap;white-space:nowrap}
+}
