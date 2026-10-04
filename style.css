@@ -666,3 +666,6 @@ html,body{overflow-x:clip}
 .cadeaux-foot a{font-weight:600}
 @media (max-width:1024px){.cadeaux-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.cadeaux-grid{grid-template-columns:1fr}.cadeau{flex-direction:row}.cadeau .cad-img{width:112px;height:auto;flex:0 0 112px;align-items:center;padding:10px}.cadeau .cad-img img,.cadeau .cad-img.trio img:nth-child(2){max-height:92px}.cadeau .cad-body{padding:.8rem .9rem}.cadeau .cad-img.trio img:not(:nth-child(2)){display:none}}
+
+/* ===== v6 — Fond de carte OpenStreetMap adouci (teintes crème, comme l'ancien fond CARTO) ===== */
+#map .leaflet-tile-pane{filter:grayscale(1) sepia(.2) brightness(1.1) contrast(.78)}
