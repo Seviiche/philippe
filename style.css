@@ -408,23 +408,6 @@ html{scroll-padding-top:86px}
 
 /* ============ MAJ v2 — juillet 2026 ============ */
 
-/* Pop-up promotion du moment */
-.promo-pop{position:fixed;right:18px;bottom:18px;z-index:999;max-width:320px;background:#fff;border:2px solid #C4881E;border-radius:14px;box-shadow:0 10px 30px rgba(46,33,24,.25);padding:1rem 1.1rem;font-size:.95rem;animation:promoIn .5s ease}
-@keyframes promoIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.promo-pop .pp-tag{display:inline-block;background:#C4881E;color:#fff;font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.2rem .6rem;margin-bottom:.45rem}
-.promo-pop h3{margin:.1rem 0 .3rem;font-size:1.05rem}
-.promo-pop p{margin:0 0 .6rem;color:#5a4a3a}
-.promo-pop .pp-close{position:absolute;top:8px;right:10px;border:0;background:none;font-size:1.15rem;line-height:1;cursor:pointer;color:#8a7a6a}
-.promo-pop .pp-prices{display:flex;gap:.5rem;margin:.5rem 0 .7rem;flex-wrap:wrap}
-.promo-pop .pp-price{background:#FFF4D6;border:1px solid #e8d9ae;border-radius:10px;padding:.35rem .6rem;font-weight:600;color:#2E2118}
-@media(max-width:480px){.promo-pop{left:12px;right:12px;max-width:none}}
-
-/* Bandeau promo (page produits) */
-.promo-band{background:linear-gradient(100deg,#C4881E,#a76f12);color:#fff;border-radius:16px;padding:1.3rem 1.5rem;display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
-.promo-band img{width:130px;height:auto;flex:0 0 auto}
-.promo-band h3{margin:.1rem 0 .35rem;font-size:1.35rem;color:#fff}
-.promo-band p{margin:0;color:#fff8ea}
-.promo-band .pp-price{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:10px;padding:.4rem .7rem;font-weight:600;display:inline-block;margin:.5rem .4rem 0 0}
 
 /* Prix « à partir de » */
 .miel-price{display:inline-block;margin-top:.5rem;font-weight:600;color:#8A5713;font-size:.92rem}
@@ -496,28 +479,16 @@ html{scroll-padding-top:86px}
 .article-body p+p{margin-top:1rem}
 
 /* Ancrage de toutes les sections sous le header fixe */
-section[id],[id].prevenez,#prevenez,#points-de-vente,#promotion,#produits-ferme,#bougies,#avis,#vivant,#carnet{scroll-margin-top:92px}
+section[id],[id].prevenez,#prevenez,#points-de-vente,#cadeaux,#miels,#produits-ferme,#bougies,#avis,#vivant,#carnet{scroll-margin-top:92px}
 
 /* Mention prix unique en haut des miels (accueil) */
 .miels-from{margin-top:.6rem;font-size:.98rem;color:#5a4a3a}
 .miels-from a{color:#8A5713;text-decoration:underline}
 
-/* Pop-up promo renforcée pour bien ressortir */
-.promo-pop{border-width:3px;box-shadow:0 14px 40px rgba(46,33,24,.32);background:linear-gradient(180deg,#fffdf7,#fff5e0)}
-.promo-pop .pp-tag{background:#c0392b;animation:promoPulse 1.8s ease-in-out infinite}
-@keyframes promoPulse{0%,100%{box-shadow:0 0 0 0 rgba(192,57,43,.45)}50%{box-shadow:0 0 0 7px rgba(192,57,43,0)}}
-.promo-pop h3{color:#8A5713}
-@media(prefers-reduced-motion:reduce){.promo-pop .pp-tag{animation:none}}
-
-/* Prix en promotion (barré + tarif promo) */
-.price-chip.price-promo{background:#fdecea;border-color:#e6a9a1;color:#8a2f22}
+/* Prix barré (ex. tailles indisponibles) */
 .price-chip .price-old{text-decoration:line-through;color:#a98;font-weight:500;margin-right:.15rem}
-.price-chip .pp-flag{background:#c0392b;color:#fff;border-radius:999px;padding:.05rem .4rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;margin-right:.2rem}
-.promo-note{margin:.5rem 0 0;font-size:.85rem;color:#8a2f22;font-weight:500}
 
 /* Espacements réduits entre sections rapprochées */
-#promo-accueil{padding-top:1rem;padding-bottom:.6rem}
-#promo-accueil + #miels{padding-top:1.4rem}
 #bougies{padding-bottom:1.2rem}
 #bougies + #vivant{padding-top:1.2rem}
 #vivant{padding-bottom:1.2rem}
@@ -539,9 +510,6 @@ section[id],[id].prevenez,#prevenez,#points-de-vente,#promotion,#produits-ferme,
 .map-legend .lg-butine{background:#c4881e}
 .map-legend .lg-vente{background:#2E2118}
 .map-legend em{color:#8A5713;font-style:normal;font-weight:600}
-/* espace réduit promo -> carte */
-#promotion{padding-bottom:1rem}
-#promotion + #carte{padding-top:1.2rem}
 
 /* Carte Leaflet figée */
 #map{height:440px;border-radius:18px;box-shadow:0 12px 34px rgba(46,33,24,.18);border:1px solid #e4d7b6;cursor:default}
@@ -576,6 +544,8 @@ section[id],[id].prevenez,#prevenez,#points-de-vente,#promotion,#produits-ferme,
 
 /* Crédit concepteur */
 .site-footer .foot-credit{display:inline-block;margin-top:.3rem;color:#8f8271;font-size:.8rem}
+.site-footer .foot-maj{display:inline-block;margin-top:.3rem;margin-left:.6rem;padding-left:.6rem;border-left:1px solid rgba(245,237,218,.18);color:#8f8271;font-size:.75rem;opacity:.85}
+@media (max-width:520px){.site-footer .foot-maj{display:block;margin-left:0;padding-left:0;border-left:0}}
 
 /* Bouton contact du concepteur */
 .site-footer .foot-contact{display:inline-block;margin-left:.5rem;padding:.12rem .6rem;border:1px solid rgba(232,217,174,.4);border-radius:999px;color:#e8d9ae;text-decoration:none;font-size:.78rem;transition:background .2s ease,border-color .2s ease}
@@ -596,7 +566,6 @@ a,button,summary,.btn,input[type="submit"]{-webkit-tap-highlight-color:rgba(196,
 .btn{min-height:44px}
 .btn-sm{min-height:40px}
 .nav-toggle{min-width:44px;min-height:44px;display:none;align-items:center;justify-content:center}
-.promo-pop .pp-close{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;top:4px;right:6px}
 .see-on-map{padding:.35rem 0;min-height:36px}
 .faq summary{min-height:52px}
 
@@ -625,11 +594,6 @@ html,body{overflow-x:clip}
   /* Bloc "produit vivant" : image pleine largeur */
   .vivant{flex-direction:column;align-items:flex-start}
   .vivant img{width:100%;max-width:none;height:auto}
-  /* Bandeau promo : image centrée au-dessus du texte */
-  .promo-band{justify-content:center;text-align:center}
-  .promo-band img{width:110px}
-  /* Pop-up promo plus compacte, limitée en hauteur */
-  .promo-pop{max-height:70vh;overflow:auto;font-size:.92rem}
 }
 
 /* Très petits écrans (≤ 400px) : alléger l'en-tête */
@@ -674,3 +638,31 @@ html,body{overflow-x:clip}
 /* Grande carte pleine largeur (page Où nous trouver) */
 .map-big{margin-top:clamp(1.6rem,4vw,2.6rem);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
 .map-big iframe{display:block;width:100%;height:clamp(380px,62vh,600px);border:0}
+
+/* ===== v5 — Disponibilité (pommes, etc.) ===== */
+.price-chip.chip-dispo{background:#eef2e3;border-color:#c9d2ad;color:#4b5531}
+.price-chip.chip-dispo::before{content:"";display:inline-block;width:.5rem;height:.5rem;border-radius:50%;background:var(--olive);margin-right:.4rem;vertical-align:.05em}
+.price-chip.chip-bientot{background:var(--wax);border-style:dashed;color:var(--bark-soft);font-weight:500}
+
+/* ===== v5 — Bloc saisonnier « Idées cadeaux » (accueil) =====
+   À retirer après les fêtes : supprimer la section #cadeaux dans index.html
+   (elle se masque aussi toute seule après la date indiquée dans data-fin). */
+#cadeaux{padding-top:clamp(2.2rem,4vw,3.2rem);padding-bottom:clamp(1.6rem,3vw,2.4rem)}
+#cadeaux ~ #miels{padding-top:clamp(1.6rem,3vw,2.4rem)}
+.cadeaux-box{position:relative;background:linear-gradient(135deg,#FFFDF7 0%,#FBF1DA 100%);border:1px solid var(--line);border-radius:24px;padding:clamp(1.4rem,3vw,2.4rem);overflow:hidden;box-shadow:var(--shadow)}
+.cadeaux-box .section-head{margin-bottom:1.4rem}
+.cadeaux-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.cadeau{position:relative;display:flex;flex-direction:column;background:var(--comb);border:1px solid var(--line);border-radius:18px;overflow:hidden;color:var(--bark);transition:transform .18s ease,box-shadow .25s ease}
+.cadeau:hover{transform:translateY(-4px);box-shadow:var(--shadow);color:var(--bark)}
+.cadeau .cad-img{height:170px;display:flex;align-items:flex-end;justify-content:center;gap:.2rem;padding:14px 12px 6px;background:linear-gradient(180deg,#faf6ec,#f3ecdc)}
+.cadeau .cad-img img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.cadeau .cad-img.trio img{max-height:78%}
+.cadeau .cad-img.trio img:nth-child(2){max-height:100%}
+.cadeau .cad-body{padding:.95rem 1.05rem 1.1rem;display:flex;flex-direction:column;flex:1}
+.cadeau h3{font-size:1.12rem;line-height:1.15}
+.cadeau p{color:var(--bark-soft);font-size:.93rem;margin:.45rem 0 0;flex:1}
+.cadeau .cad-price{align-self:flex-start;margin-top:.75rem;background:#FFF4D6;border:1px solid #e8d9ae;border-radius:999px;padding:.22rem .65rem;font-size:.82rem;font-weight:600;color:var(--bark)}
+.cadeaux-foot{margin:1.3rem 0 0;color:var(--bark-soft);font-size:.95rem}
+.cadeaux-foot a{font-weight:600}
+@media (max-width:1024px){.cadeaux-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.cadeaux-grid{grid-template-columns:1fr}.cadeau{flex-direction:row}.cadeau .cad-img{width:112px;height:auto;flex:0 0 112px;align-items:center;padding:10px}.cadeau .cad-img img,.cadeau .cad-img.trio img:nth-child(2){max-height:92px}.cadeau .cad-body{padding:.8rem .9rem}.cadeau .cad-img.trio img:not(:nth-child(2)){display:none}}

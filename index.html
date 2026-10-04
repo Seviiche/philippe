@@ -76,17 +76,35 @@
   </div>
 </div></section>
 
-<section class="section" id="promo-accueil"><div class="wrap">
-  <div class="promo-band" data-reveal>
-    <img src="images/miel-seau-5kg.webp" alt="Seau de 5 kg de miel de fleurs sauvages — promotion du moment">
-    <div><span class="pp-tag" style="background:#c0392b;color:#fff;border-radius:999px;padding:.25rem .7rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600">Promotion du moment</span>
-      <h3>Miel de fleurs sauvages</h3>
-      <p>Le plein de miel pour la famille, à prix doux — en quantité limitée, à la miellerie.</p>
-      <span class="pp-price">1 kg — 10 €</span><span class="pp-price">5 kg — 45 €</span>
-      <div style="margin-top:.8rem"><a class="btn btn-ghost btn-sm" href="nos-produits.html#promotion" style="border-color:rgba(255,255,255,.6);color:#fff">Voir la promotion</a></div>
+<!-- ===== DÉBUT bloc saisonnier « Idées cadeaux » (v5, octobre 2026) =====
+     Pour le retirer après les fêtes : supprimer tout ce qui se trouve entre DÉBUT et FIN.
+     Il se masque aussi tout seul après la date data-fin (format AAAA-MM-JJ). -->
+<section class="section" id="cadeaux" data-fin="2027-01-10"><div class="wrap">
+  <div class="cadeaux-box" data-reveal>
+    <div class="section-head"><span class="eyebrow">Pour les fêtes</span><h2>Idées cadeaux de la miellerie</h2><p>Des cadeaux qui viennent d'ici : le miel de nos ruches, des bougies coulées dans leur cire et les produits du verger.</p></div>
+    <div class="cadeaux-grid">
+      <a class="cadeau" href="nos-produits.html#bougies" data-reveal>
+        <span class="cad-img trio"><img src="images/bougie-sapin.webp" alt="" loading="lazy"><img src="images/bougie-bonhomme.webp" alt="Bougies d'hiver en cire d'abeille : sapin, bonhomme de neige, santon" loading="lazy"><img src="images/bougie-santon.webp" alt="" loading="lazy"></span>
+        <span class="cad-body"><h3>Les bougies d'hiver</h3><p>Sapin, bonhomme de neige, santon, lutin, flocon… coulés dans la cire de nos ruches.</p><span class="cad-price">À découvrir sur place</span></span>
+      </a>
+      <a class="cadeau" href="nos-produits.html#miels" data-reveal>
+        <span class="cad-img"><img src="images/miel-trio.webp" alt="Trois pots de miel de la miellerie" loading="lazy"></span>
+        <span class="cad-body"><h3>Un trio de miels</h3><p>Trois floraisons, trois paysages du Roussillon : composez votre assortiment parmi nos pots de 250 g.</p><span class="cad-price">5 € le pot de 250 g</span></span>
+      </a>
+      <a class="cadeau" href="nos-produits.html#produits-ferme" data-reveal>
+        <span class="cad-img"><img src="images/huile-olive-duo.webp" alt="Bouteilles d'huile d'olive vierge extra de l'exploitation" loading="lazy"></span>
+        <span class="cad-body"><h3>L'huile d'olive de nos oliviers</h3><p>Vierge extra, de l'exploitation. Une belle bouteille pour les gourmets.</p><span class="cad-price">À partir de 10 €</span></span>
+      </a>
+      <a class="cadeau" href="nos-produits.html#produits-ferme" data-reveal>
+        <span class="cad-img"><img src="images/miel-rayon.webp" alt="Miel en rayon, brut de la ruche" loading="lazy"></span>
+        <span class="cad-body"><h3>Le miel en rayon</h3><p>Le miel tel quel, dans sa cire, brut de la ruche : le cadeau des curieux.</p><span class="cad-price">Selon disponibilité</span></span>
+      </a>
     </div>
+    <p class="cadeaux-foot">Tout se trouve à la miellerie, à Bouleternère : venez composer votre panier, on vous conseille sur place. · <a href="ou-nous-trouver.html#points-de-vente">Horaires et accès</a></p>
   </div>
 </div></section>
+<script>(function(){var c=document.getElementById('cadeaux');if(!c)return;var f=c.getAttribute('data-fin');if(f&&new Date()>new Date(f+'T23:59:59'))c.parentNode.removeChild(c);})();</script>
+<!-- ===== FIN bloc saisonnier « Idées cadeaux » ===== -->
 <section class="section" id="miels"><div class="wrap">
   <div class="section-head" data-reveal><span class="eyebrow">Nos miels</span><h2>Un miel par floraison, un paysage par miel</h2><p>Des garrigues d'hiver aux vallées d'altitude, chaque miel raconte un coin du Roussillon et le moment où les abeilles l'ont butiné.</p><p class="miels-from">Nos miels : <strong>à partir de 5 €</strong> le pot &middot; <a href="nos-produits.html#miels">voir tous les prix et les détails</a></p></div>
   <div class="miels-grid"><article class="miel-card" data-reveal><a class="miel-link" href="nos-produits.html#miel-romarin" aria-label="Romarin — voir le détail"></a><span class="miel-hex" aria-hidden="true"></span><div class="miel-txt"><h3>Romarin</h3><span class="miel-lieu">Corbières</span><p>Butiné de mi-février à début mai dans la garrigue. D'une finesse extraordinaire, une saveur incomparable.</p></div></article>
@@ -245,18 +263,8 @@
     <p><a href="nos-partenaires.html#devenir-partenaire">Devenir partenaire</a></p>
     <p><a href="mentions-legales.html">Mentions légales</a></p></div>
 </div>
-<div class="wrap foot-copy">© 2026 Miels Thorent — Philippe Thorent, apiculteur à Bouleternère (66). Tous droits réservés.<br><span class="foot-credit">Site conçu et développé par Sébastien Thorent.</span></div></footer>
+<div class="wrap foot-copy">© 2026 Miels Thorent — Philippe Thorent, apiculteur à Bouleternère (66). Tous droits réservés.<br><span class="foot-credit">Site conçu et développé par Sébastien Thorent.</span><span class="foot-maj">Mise à jour le <time datetime="2026-10-04">4 octobre 2026</time></span></div></footer>
 
-<!-- Promotion du moment (fermable) — visible par défaut, cachée seulement si déjà fermée -->
-<aside class="promo-pop" id="promo-pop" role="complementary" aria-label="Promotion du moment">
-  <button class="pp-close" type="button" aria-label="Fermer la promotion" onclick="var e=document.getElementById('promo-pop');e.parentNode.removeChild(e);try{localStorage.setItem('promoFerme','fleurs-sauvages-2026-07')}catch(x){}">&#10005;</button>
-  <span class="pp-tag">Promotion du moment</span>
-  <h3>Miel de fleurs sauvages</h3>
-  <div class="pp-prices"><span class="pp-price">1&nbsp;kg&nbsp;&mdash;&nbsp;10&nbsp;&euro;</span><span class="pp-price">5&nbsp;kg&nbsp;&mdash;&nbsp;45&nbsp;&euro;</span></div>
-  <p>En quantit&eacute; limit&eacute;e, &agrave; la miellerie.</p>
-  <a class="btn btn-primary btn-sm" href="nos-produits.html#promotion">Voir la promotion</a>
-</aside>
-<script>(function(){try{if(localStorage.getItem('promoFerme')==='fleurs-sauvages-2026-07'){var e=document.getElementById('promo-pop');if(e)e.parentNode.removeChild(e);}}catch(x){}})();</script>
 
 <script>
 /* Ancres : révèle le contenu et recale sous le header fixe, même via lien externe */
